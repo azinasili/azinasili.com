@@ -1,0 +1,15 @@
+// ----------------------------------------------------------------------------
+// Footer
+// Content container
+// ----------------------------------------------------------------------------
+
+// Import settings
+@import 'styles/settings';
+
+.Footer {
+  margin-top: auto;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,22 @@
+// ----------------------------------------------------------------------------
+// Project
+// Portfolio projects
+// ----------------------------------------------------------------------------
+
+// Import settings
+@import 'styles/settings';
+
+.Project {
+  margin-bottom: 4em;
+  margin-top: 4em;
+}
+
+.Project-samples {
+  margin-top: 4em;
+}
+
+@each $project, $color in get($colors, 'projects') {
+  .Project-#{$project} {
+    color: $color;
+  }
+}

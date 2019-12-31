@@ -1,0 +1,36 @@
+{
+  "name": "Azin Asili",
+  "title": "Front-End Developer",
+  "desc": "I'm a front-end developer with a passion for building interfaces. I rely heavily on my design background to create beautiful products. Besides development I enjoy craft beer and talking tech.",
+  "copyright": "Azin Asili. All Rights Reserved.",
+  "socialmedia": [{
+    "title": "Github",
+    "name": "github",
+    "link": "https://github.com/azinasili",
+    "icon": "icon_github.svg"
+  },
+  {
+    "title": "Codepen",
+    "name": "codepen",
+    "link": "https://codepen.io/azinasili/",
+    "icon": "icon_codepen.svg"
+  },
+  {
+    "title": "Medium",
+    "name": "medium",
+    "link": "https://medium.com/@azinasili",
+    "icon": "icon_medium.svg"
+  },
+  {
+    "title": "Twitter",
+    "name": "twitter",
+    "link": "https://twitter.com/azinasili",
+    "icon": "icon_twitter.svg"
+  },
+  {
+    "title": "hello@azinasili.com",
+    "name": "gmail",
+    "link": "mailto:hello@azinasili.com",
+    "icon": "icon_email.svg"
+  }]
+}

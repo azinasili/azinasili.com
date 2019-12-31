@@ -1,0 +1,106 @@
+// ----------------------------------------------------------------------------
+// Settings
+// Options for layout, icons, variables, and others
+//
+// 1. Dependencies
+// 2. Dependency options
+// 3. Typography
+// 4. Color palette
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// 1. Dependencies
+// ----------------------------------------------------------------------------
+@import '@azinasili/bytes/bytes';
+@import 'sass-mq/mq';
+
+
+// ----------------------------------------------------------------------------
+// 2. Dependency options
+// ----------------------------------------------------------------------------
+
+// Bytes library options
+// https://github.com/azinasili/bytes
+// 1. Must have `px` unit
+$bytes: (
+  'font-size'             : 14px, // 1
+  'media-path'            : '../img',
+);
+
+// Sass mq breakpoints for responsive design
+// https://github.com/sass-mq/sass-mq
+// Must be in `em` or `px` units. Sass mq converts values on build
+$mq-breakpoints: (
+  'mobile'                : 420px,
+  'tablet'                : 768px,
+  'laptop'                : 1024px,
+  'desktop'               : 1440px,
+  'wide'                  : 1600px,
+);
+
+
+// ----------------------------------------------------------------------------
+// 3. Typography
+// ----------------------------------------------------------------------------
+$typography: (
+  'primary'               : ('Roboto Mono', monospace),
+  'secondary'             : ('Rubik', sans-serif),
+  'font-size'             : get($bytes, 'font-size'),
+  'headings': (
+    'h1'                  : em(64px),
+    'h2'                  : em(45px),
+    'h3'                  : em(32px),
+    'h4'                  : em(23px),
+    'h5'                  : em(get($bytes, 'font-size')),
+    'h6'                  : em(11px),
+  ),
+);
+
+
+// ----------------------------------------------------------------------------
+// 4. Color palette
+// ----------------------------------------------------------------------------
+$colors: (
+  'primary': (
+    'lighter'             : rgb(239, 235, 233),  // #efebe9
+    'light'               : rgb(215, 204, 200),  // #d7ccc8
+    'base'                : rgb(93, 64, 55),     // #5d4037
+  ),
+  'secondary': (
+    'light'               : rgb(151, 185, 193),  // #97b9c1
+    'base'                : rgb(91, 119, 125),   // #5b777d
+  ),
+  'gray': (
+    'base'                : rgb(222, 228, 229),  // #dee4e5
+  ),
+  'black': (
+    'base'                : rgb(0, 0, 0),
+    'text'                : transparent(rgb(0, 0, 0), 87%),
+    'icons'               : transparent(rgb(0, 0, 0), 54%),
+    'divider'             : transparent(rgb(0, 0, 0), 12%),
+    'disabled'            : transparent(rgb(0, 0, 0), 26%),
+  ),
+  'white': (
+    'base'                : rgb(255, 255, 255),
+    'secondary'           : transparent(rgb(255, 255, 255), 70%),
+    'divider'             : transparent(rgb(255, 255, 255), 12%),
+    'disabled'            : transparent(rgb(255, 255, 255), 30%),
+  ),
+  'social-media': (
+    'gmail'               : rgb(209, 72, 54),  // #d14836
+    'twitter'             : rgb(29, 161, 242), // #1da1f2
+    'github'              : rgb(24, 23, 23),   // #181717
+    'codepen'             : rgb(0, 0, 0),      // #000000
+    'medium'              : rgb(0, 171, 107),  // #00ab6b
+  ),
+  'projects': (
+    'enterprisecloudworks': rgb(255, 184, 28), // #ffb81c
+    'enterprisecloudworks-mockup': rgb(61, 53, 66), // #3d3542
+    'graphitegtc'         : rgb(41, 167, 223), // #29a7df
+    'nocodeconference'    : rgb(255, 105, 82), // #ff6952
+    'gsw'                 : rgb(72, 50, 35),   // #483223
+    'githubsearch'        : rgb(3, 150, 255),  // #0396ff
+    'razzword'            : rgb(255, 95, 109), // #ff5f6d
+  ),
+);

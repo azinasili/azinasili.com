@@ -1,0 +1,31 @@
+// ----------------------------------------------------------------------------
+// Intro
+// About me blurb
+// ----------------------------------------------------------------------------
+
+// Import settings
+@import 'styles/settings';
+
+.Intro {
+  align-items: center;
+  height: em(384px);
+  display: flex;
+}
+
+.Description {
+  font-size: 1.25em;
+  line-height: 1.6;
+  margin-bottom: 5.25em;
+
+  @include mq($from: 'tablet') {
+    max-width: 70%;
+  }
+
+  @include mq($from: 'laptop') {
+    max-width: 60%;
+  }
+
+  @include mq($from: 'desktop') {
+    max-width: 45%;
+  }
+}

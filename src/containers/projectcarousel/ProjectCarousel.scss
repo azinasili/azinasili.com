@@ -1,0 +1,51 @@
+// ----------------------------------------------------------------------------
+// Carousel
+// Project carousel of images
+// ----------------------------------------------------------------------------
+
+// Import settings
+@import 'styles/settings';
+
+.Project-carousel {
+  align-items: flex-start;
+  border-radius: em(4px);
+  cursor: -webkit-grab;
+  cursor: grab;
+  display: flex;
+  position: relative;
+  user-select: none;
+
+  @include mq($until: 'laptop') {
+    flex-wrap: wrap;
+  }
+
+  @include mq($from: 'laptop') {
+    background: color(get($colors, 'primary', 'base'), 12%);
+    left: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    right: 50%;
+    width: 100vw;
+  }
+}
+
+.Project-carousel-item {
+  @include mq($until: 'laptop') {
+    flex: 1 1 100%;
+    left: 50%;
+    margin-bottom: 1em;
+  }
+
+  @include mq($from: 'laptop') {
+    box-shadow: em(0 10px 20px 0) color(get($colors, 'primary', 'base'), 33%);
+    flex-shrink: 0;
+
+    &:not(:last-child) {
+      margin-right: 4em;
+    }
+  }
+}

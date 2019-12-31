@@ -1,0 +1,81 @@
+// ----------------------------------------------------------------------------
+// Project
+// Portfolio projects
+// ----------------------------------------------------------------------------
+
+// Import settings
+@import 'styles/settings';
+
+.Project-header {
+  @include mq($from: 'tablet') {
+    text-align: center;
+  }
+}
+
+.Project-title {
+  @include word-wrap();
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+
+  @include mq($from: 'tablet') {
+    font-size: 4em;
+  }
+}
+
+.Project-details {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: em(960px);
+  text-align: left;
+
+  @include mq($until: 'tablet') {
+    flex-direction: column;
+  }
+
+  @each $project, $color in get($colors, 'projects') {
+    .Project-#{$project} & {
+      color: color($color, $chroma: -30%);
+    }
+  }
+}
+
+.Project-summary {
+  flex: 0 1 percentage(2/3);
+  line-height: 1.8;
+
+  @include mq($from: 'tablet') {
+    margin-right: 4em;
+  }
+}
+
+.Project-tool {
+  $font-size: 12px;
+  background-color: color(get($colors, 'primary', 'base'), 10%);
+  border-radius: em(2px);
+  display: inline-block;
+  font-size: em($font-size);
+  margin: em(0 4px 4px 0, $font-size);
+  padding: em(4px 8px, $font-size);
+
+  @each $project, $color in get($colors, 'projects') {
+    .Project-#{$project} & {
+      background-color: color(color($color, $chroma: -30%), 10%);
+    }
+  }
+}
+
+.Project-link {
+  border-radius: em(2px);
+  color: inherit;
+  text-decoration: underline;
+
+  @each $project, $color in get($colors, 'projects') {
+    .Project-#{$project} &:hover,
+    .Project-#{$project} &:focus {
+      background-color: color(color($color, $chroma: -30%), 10%);
+    }
+  }
+}

@@ -1,0 +1,84 @@
+// ----------------------------------------------------------------------------
+// App
+// Basic styles for web-app
+//
+// 1. Imports
+// 2. Page
+// 3. Headings
+// ----------------------------------------------------------------------------
+
+
+// ----------------------------------------------------------------------------
+// 1. Imports
+// ----------------------------------------------------------------------------
+@import 'styles/settings';
+@import 'normalize.css/normalize';
+
+
+// ----------------------------------------------------------------------------
+// 2. Page
+// ----------------------------------------------------------------------------
+:root {
+  $font-size: strip-unit(get($typography, 'font-size'));
+  box-sizing: border-box;
+  @if $font-size != 16 {
+    font-size: $font-size/16 * 100%;
+  }
+  font-family: get($typography, 'primary');
+  height: 100%;
+
+  @include mq($until: 'tablet') {
+    font-size: 2.7vw;
+  }
+
+  @include mq($from: 'tablet', $until: 'laptop') {
+    font-size: 75%;
+  }
+}
+
+*,
+*::before,
+*::after { box-sizing: inherit; }
+
+body {
+  background-color: get($colors, 'primary', 'light');
+  background-image:
+    linear-gradient(
+      to bottom,
+      get($colors, 'primary', 'lighter') 0%,
+      get($colors, 'primary', 'light') 100%);
+  background-repeat: no-repeat;
+  height: inherit;
+  overflow-x: hidden;
+}
+
+#root {
+  height: inherit;
+}
+
+.App {
+  color: get($colors, 'primary', 'base');
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1em;
+
+  @include mq($from: 'tablet') {
+    padding: 3em;
+  }
+}
+
+
+// ----------------------------------------------------------------------------
+// 3. Headings
+// ----------------------------------------------------------------------------
+#{map-keys(get($typography, 'headings'))} {
+  font-family: get($typography, 'secondary');
+  margin-top: 0;
+}
+
+@for $i from 1 through length(get($typography, 'headings')) {
+  h#{$i} {
+    font-size: get($typography, 'headings', 'h#{$i}');
+  }
+}

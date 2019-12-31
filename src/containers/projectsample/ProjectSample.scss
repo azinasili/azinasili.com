@@ -1,0 +1,44 @@
+// ----------------------------------------------------------------------------
+// Sample
+// Project sample image
+// ----------------------------------------------------------------------------
+
+// Import settings
+@import 'styles/settings';
+
+.Project-sample {
+  @include mq($until: 'laptop') {
+    flex: 1 1 100%;
+    left: 50%;
+    margin-bottom: 1em;
+  }
+
+  @include mq($from: 'laptop') {
+    flex-shrink: 0;
+  }
+}
+
+.Project-sample--large {
+  border-radius: em(4px);
+  margin-bottom: 1em;
+  padding: 1em;
+
+  @include mq($from: 'tablet') {
+    padding: 5em;
+  }
+
+  @include mq($until: 'laptop') {
+    margin-left: -50vw;
+    margin-right: -50vw;
+    position: relative;
+    right: 50%;
+    width: 100vw;
+  }
+}
+
+@each $project, $color in get($colors, 'projects') {
+  .Project-#{$project} .Project-sample--large {
+    color: $color;
+    background-image: radial-gradient(circle, tint($color, 75%), $color);
+  }
+}

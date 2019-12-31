@@ -1,0 +1,61 @@
+// ----------------------------------------------------------------------------
+// Social Media
+// Links to social media and contacts
+// ----------------------------------------------------------------------------
+
+// Import settings
+@import 'styles/settings';
+
+.SocialMedia-link {
+  border-radius: em(2px);
+  color: color(get($colors, 'primary', 'base'), 87%);
+  display: inline-block;
+  padding: .5em;
+
+  @include mq($until: 'tablet') {
+    font-size: em(18px);
+  }
+
+  &:hover,
+  &:focus {
+    color: get($colors, 'white', 'base');
+    cursor: pointer;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: .5em;
+    margin-right: .65em;
+  }
+}
+
+// Set hover/focus background colors for links
+@each $brand, $color in get($colors, 'social-media') {
+  .SocialMedia-#{$brand}:hover,
+  .SocialMedia-#{$brand}:focus {
+    background-color: get($colors, 'social-media', #{$brand});
+  }
+}
+
+.SocialMedia-link-icon,
+.SocialMedia-link-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.SocialMedia-link-icon {
+  $header-font-size: 12px;
+  fill: currentColor;
+  height: em(18px, $header-font-size);
+  margin-right: .5em;
+  width: em(18px, $header-font-size);
+
+  > svg {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.SocialMedia-link-title {
+  text-decoration: underline;
+}
