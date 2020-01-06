@@ -39,17 +39,18 @@
   },
   "rules": {
     "import/extensions": ["error", "never"],
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "@typescript-eslint/unbound-method": ["warn"]
   },
   "overrides": [
     {
       "files": ["**/*.tsx"],
       "rules": {
         "react/prop-types": "off",
-        "jsx-a11y/anchor-is-valid": [ "error", {
-          "components": [ "Link" ],
-          "specialLink": [ "hrefLeft", "hrefRight" ],
-          "aspects": [ "invalidHref", "preferButton" ]
+        "jsx-a11y/anchor-is-valid": ["error", {
+          "components": ["Link"],
+          "specialLink": ["hrefLeft", "hrefRight"],
+          "aspects": ["invalidHref", "preferButton"]
         }]
       }
     }
