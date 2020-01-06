@@ -3,26 +3,12 @@ import { NextPage } from 'next';
 import fetch from 'isomorphic-unfetch';
 import Basic from '../src/layouts/Basic';
 import ProjectList from '../src/components/ProjectList';
-
-export interface ProjectsList {
-  name: string;
-  description: string;
-  url: string;
-  highlights: string[];
-  id: number;
-}
-
-export interface ProfileLinks {
-  title: string;
-  name: string;
-  url: string;
-  icon: string;
-  id: number;
-}
+import { Projects } from '../src/types/project';
+import { ProfileLinks } from '../src/types/profile';
 
 interface HomeProps {
-  projects: ProjectsList[];
-  profileLinks: ProfileLinks[];
+  projects: Projects;
+  profileLinks: ProfileLinks;
 }
 
 const Home: NextPage<HomeProps> = ({ profileLinks, projects }) => (
@@ -43,6 +29,6 @@ Home.getInitialProps = async (): Promise<HomeProps> => {
   const projects = await projectsResponse.json();
 
   return { profileLinks, projects };
-}
+};
 
 export default Home;

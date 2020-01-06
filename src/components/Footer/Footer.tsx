@@ -11,7 +11,7 @@ const Footer: React.FC<{}> = (): React.ReactElement => (
     <style jsx>
       {`
         .footer {
-          font-size: .75em;
+          font-size: 0.75em;
           text-align: center;
         }
       `}

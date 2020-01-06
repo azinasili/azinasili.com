@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { ProfileLinks } from '../../../pages/index';
+import { ProfileLinks } from '../../types/profile';
 
 interface HeaderProps {
   title: string;
   subTitle: string;
-  links?: ProfileLinks[];
+  links?: ProfileLinks;
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -18,7 +18,11 @@ const Header: React.FC<HeaderProps> = ({
       <React.Fragment key={id}>
         <li className="profile-item">
           <a href={url}>
-            <img src={`/socialmedia/${icon}`} alt={urlTitle} className="profile-image" />
+            <img
+              src={`/socialmedia/${icon}`}
+              alt={urlTitle}
+              className="profile-image"
+            />
             <span className="profile-name">{urlTitle}</span>
           </a>
         </li>
@@ -26,7 +30,7 @@ const Header: React.FC<HeaderProps> = ({
           {`
             .profile-item {
               display: inline-block;
-              font-size: .875em;
+              font-size: 0.875em;
             }
 
             .profile-item:not(:last-child) {
@@ -40,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
             }
 
             .profile-image {
-              margin-right: .25em;
+              margin-right: 0.25em;
             }
           `}
         </style>

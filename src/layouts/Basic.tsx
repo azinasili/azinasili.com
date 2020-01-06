@@ -2,12 +2,12 @@ import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { ProfileLinks } from '../../pages/index';
+import { ProfileLinks } from '../types/profile';
 
 interface BasicProps {
   title: string;
   description: string;
-  profileLinks: ProfileLinks[];
+  profileLinks: ProfileLinks;
 }
 
 const Basic: React.FC<BasicProps> = ({
@@ -43,7 +43,7 @@ const Basic: React.FC<BasicProps> = ({
           align-self: center;
           background-color: red;
           flex: 1;
-          padding: .25em 1em;
+          padding: 0.25em 1em;
           max-width: 38em;
         }
       `}

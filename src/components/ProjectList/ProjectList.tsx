@@ -1,20 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
-import { ProjectsList } from '../../../pages/index';
+import { Project, Projects } from '../../types/project';
 
 interface ProjectListProps {
-  projects: ProjectsList[];
+  projects: Projects;
 }
 
 const ProjectList: React.FC<ProjectListProps> = ({
   projects,
 }): React.ReactElement => {
-  const highlightList = (highlights: ProjectsList['highlights']) =>
+  const highlightList = (
+    highlights: Project['highlights'],
+  ): React.ReactElement[] =>
     highlights.map(highlight => (
       <React.Fragment key={highlights.indexOf(highlight)}>
-        <li className="highlight-item">
-          {highlight}
-        </li>
+        <li className="highlight-item">{highlight}</li>
         <style jsx>
           {`
             .highlight-item {
@@ -43,14 +43,14 @@ const ProjectList: React.FC<ProjectListProps> = ({
             </Link>
           </li>
           <style jsx>
-          {`
-            .highlight-items {
-              font-size: .875em;
-              list-style: none;
-              padding-left: 0;
-            }
-          `}
-        </style>
+            {`
+              .highlight-items {
+                font-size: 0.875em;
+                list-style: none;
+                padding-left: 0;
+              }
+            `}
+          </style>
         </React.Fragment>
       );
     },
