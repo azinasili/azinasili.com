@@ -2,7 +2,7 @@
 // Event handlers like onClick can't be added to this file
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
-class MyDocument extends Document {
+class AzinAsiliDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
@@ -36,4 +36,4 @@ class MyDocument extends Document {
   }
 }
 
-export default MyDocument;
+export default AzinAsiliDocument;
