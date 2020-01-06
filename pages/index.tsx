@@ -37,8 +37,8 @@ const Home: NextPage<HomeProps> = ({ profileLinks, projects }) => (
 );
 
 Home.getInitialProps = async (): Promise<HomeProps> => {
-  const profileResponse = await fetch('http://localhost:3000/api/profileLinks');
-  const projectsResponse = await fetch('http://localhost:3000/api/projectData');
+  const profileResponse = await fetch('http://localhost:3000/api/profile');
+  const projectsResponse = await fetch('http://localhost:3000/api/projects');
   const profileLinks = await profileResponse.json();
   const projects = await projectsResponse.json();
 

@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-// import projects from '../../data/projectData.json';
+// import projects from '../../data/projects.json';
 
 const PROJECTS = [
   {

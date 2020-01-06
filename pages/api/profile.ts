@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-// import links from '../../data/profileLinks.json';
+// import profile from '../../data/profile.json';
 
 const LINKS = [
   {
