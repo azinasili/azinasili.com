@@ -39,4 +39,5 @@ const LINKS = [
   },
 ];
 
-export default (req: NextApiRequest, res: NextApiResponse) => res.status(200).json(LINKS);
+export default (req: NextApiRequest, res: NextApiResponse) =>
+  res.status(200).json(LINKS);
