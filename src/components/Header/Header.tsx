@@ -53,7 +53,7 @@ const Header: React.FC<HeaderProps> = ({
   });
 
   return (
-    <header className="header">
+    <header>
       <h1>
         <Link href="/">
           <a>{title}</a>
@@ -63,10 +63,6 @@ const Header: React.FC<HeaderProps> = ({
       <ul className="profile-items">{profileLinks}</ul>
       <style jsx>
         {`
-          .header {
-            text-align: center;
-          }
-
           .profile-items {
             list-style: none;
             padding-left: 0;

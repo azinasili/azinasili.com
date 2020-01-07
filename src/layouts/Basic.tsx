@@ -28,23 +28,24 @@ const Basic: React.FC<BasicProps> = ({
         subTitle="Front-End Engineer"
         links={profileLinks}
       />
-      <main className="app-body">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
     <style jsx>
       {`
+        // [1] \`38em\` is equivalent to \`75ch\`
+        //
+        // Why \`75ch\`?
+        // The \`ch\` CSS unit is equivalent to the fonts character
+        // width. For best readability it's recommended to have
+        // roughly 75 characters per line.
         .wrap {
-          display: flex;
-          flex-direction: column;
+          display: grid;
+          grid-row-gap: 2em;
+          grid-template-columns: minmax(min-content, 38em); // [1]
+          grid-template-rows: auto 1fr auto;
+          justify-content: center;
           height: 100vh;
-        }
-
-        .app-body {
-          align-self: center;
-          background-color: red;
-          flex: 1;
-          padding: 0.25em 1em;
-          max-width: 38em;
         }
       `}
     </style>

@@ -12,7 +12,6 @@ const Footer: React.FC<{}> = (): React.ReactElement => (
       {`
         .footer {
           font-size: 0.75em;
-          text-align: center;
         }
       `}
     </style>
