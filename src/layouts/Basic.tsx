@@ -28,7 +28,7 @@ const Basic: React.FC<BasicProps> = ({
         subTitle="Front-End Engineer"
         links={profileLinks}
       />
-      <main>{children}</main>
+      <main className="main">{children}</main>
       <Footer />
     </div>
     <style jsx>
@@ -42,10 +42,21 @@ const Basic: React.FC<BasicProps> = ({
         .wrap {
           display: grid;
           grid-row-gap: 2em;
-          grid-template-columns: minmax(min-content, 38em); // [1]
+          grid-template-columns: minmax(auto, 38em); // [1]
           grid-template-rows: auto 1fr auto;
-          justify-content: center;
           height: 100vh;
+        }
+      `}
+    </style>
+    <style jsx global>
+      {`
+        .main > :first-child {
+          margin-top: 0;
+        }
+
+        .wrap > * {
+          padding-left: 1em;
+          padding-right: 1em;
         }
       `}
     </style>

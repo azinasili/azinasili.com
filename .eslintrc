@@ -40,6 +40,7 @@
   "rules": {
     "import/extensions": ["error", "never"],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+    "react/jsx-props-no-spreading": ["error", { "custom": "ignore" }],
     "@typescript-eslint/unbound-method": ["warn"]
   },
   "overrides": [

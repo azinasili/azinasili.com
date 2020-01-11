@@ -40,11 +40,14 @@ const Header: React.FC<HeaderProps> = ({
             .profile-name,
             .profile-image {
               display: inline-block;
-              vertical-align: middle;
             }
 
             .profile-image {
+              height: 1em;
               margin-right: 0.25em;
+              transform: translateY(-0.125em);
+              vertical-align: middle;
+              width: 1em;
             }
           `}
         </style>
@@ -53,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({
   });
 
   return (
-    <header>
+    <header className="header">
       <h1>
         <Link href="/">
           <a>{title}</a>
@@ -63,6 +66,10 @@ const Header: React.FC<HeaderProps> = ({
       <ul className="profile-items">{profileLinks}</ul>
       <style jsx>
         {`
+          .header {
+            padding-top: 1em;
+          }
+
           .profile-items {
             list-style: none;
             padding-left: 0;

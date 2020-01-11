@@ -20,26 +20,17 @@ class AzinAsiliDocument extends Document {
 
   render(): React.ReactElement {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link
             rel="stylesheet"
             type="text/css"
             href="https://unpkg.com/normalize.css"
           />
-          <style jsx global>
-            {`
-              html {
-                box-sizing: border-box;
-              }
-
-              *,
-              *::before,
-              *::after {
-                box-sizing: inherit;
-              }
-            `}
-          </style>
+          <link
+            href="https://fonts.googleapis.com/css?family=Courier+Prime:400,400i,700,700i&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
