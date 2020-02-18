@@ -2,18 +2,19 @@ import React from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { ProfileLinks } from '../types/profile';
+import { SocialLinks } from '../types/socialLink';
 
 interface BasicProps {
   title: string;
   description: string;
-  profileLinks: ProfileLinks;
+  socialLinks: SocialLinks;
+  children: React.ReactNode;
 }
 
 const Basic: React.FC<BasicProps> = ({
   title,
   description,
-  profileLinks,
+  socialLinks,
   children,
 }): React.ReactElement => (
   <>
@@ -26,7 +27,7 @@ const Basic: React.FC<BasicProps> = ({
       <Header
         title="Azin Asili"
         subTitle="Front-End Engineer"
-        links={profileLinks}
+        links={socialLinks}
       />
       <main className="main">{children}</main>
       <Footer />
@@ -63,4 +64,4 @@ const Basic: React.FC<BasicProps> = ({
   </>
 );
 
-export default Basic;
+export default React.memo(Basic);
