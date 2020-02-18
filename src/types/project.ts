@@ -3,7 +3,7 @@ export interface Project {
   description: string;
   url: string;
   highlights: string[];
-  id: number;
+  _id: number;
 }
 
 export type Projects = Project[];

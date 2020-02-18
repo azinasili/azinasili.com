@@ -4,15 +4,15 @@ import fetch from 'isomorphic-unfetch';
 import Basic from '../src/layouts/Basic';
 import ProjectList from '../src/components/ProjectList';
 import { Projects } from '../src/types/project';
-import { ProfileLinks } from '../src/types/profile';
+import { SocialLinks } from '../src/types/socialLink';
 
 interface HomeProps {
   projects: Projects;
-  profileLinks: ProfileLinks;
+  socialLinks: SocialLinks;
 }
 
-const Home: NextPage<HomeProps> = ({ profileLinks, projects }) => (
-  <Basic title="Home" description="my home page" profileLinks={profileLinks}>
+const Home: NextPage<HomeProps> = ({ socialLinks, projects }) => (
+  <Basic title="Home" description="my home page" socialLinks={socialLinks}>
     <p>
       I&apos;m a front-end developer with a passion for building interfaces. I
       rely heavily on my design background to create beautiful products. Besides
@@ -23,12 +23,14 @@ const Home: NextPage<HomeProps> = ({ profileLinks, projects }) => (
 );
 
 Home.getInitialProps = async (): Promise<HomeProps> => {
-  const profileResponse = await fetch('http://localhost:3000/api/profile');
+  const socialLinksResponse = await fetch(
+    'http://localhost:3000/api/socialLinks',
+  );
   const projectsResponse = await fetch('http://localhost:3000/api/projects');
-  const profileLinks = await profileResponse.json();
+  const socialLinks = await socialLinksResponse.json();
   const projects = await projectsResponse.json();
 
-  return { profileLinks, projects };
+  return { socialLinks, projects };
 };
 
 export default Home;

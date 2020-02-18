@@ -30,30 +30,28 @@ const ProjectList: React.FC<ProjectListProps> = ({
     ));
 
   const projectLinks = projects.map(
-    ({ id, url, name, description, highlights }) => {
-      return (
-        <React.Fragment key={id}>
-          <li>
-            <Link href={url}>
-              <a>
-                <h2>{name}</h2>
-                <p>{description}</p>
-                <ul className="highlight-items">{highlightList(highlights)}</ul>
-              </a>
-            </Link>
-          </li>
-          <style jsx>
-            {`
-              .highlight-items {
-                font-size: 0.875em;
-                list-style: none;
-                padding-left: 0;
-              }
-            `}
-          </style>
-        </React.Fragment>
-      );
-    },
+    ({ _id, url, name, description, highlights }) => (
+      <React.Fragment key={_id}>
+        <li>
+          <Link href={url}>
+            <a>
+              <h2>{name}</h2>
+              <p>{description}</p>
+              <ul className="highlight-items">{highlightList(highlights)}</ul>
+            </a>
+          </Link>
+        </li>
+        <style jsx>
+          {`
+            .highlight-items {
+              font-size: 0.875em;
+              list-style: none;
+              padding-left: 0;
+            }
+          `}
+        </style>
+      </React.Fragment>
+    ),
   );
 
   return (
@@ -71,4 +69,4 @@ const ProjectList: React.FC<ProjectListProps> = ({
   );
 };
 
-export default ProjectList;
+export default React.memo(ProjectList);
