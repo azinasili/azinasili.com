@@ -1,10 +1,10 @@
 import React from 'react';
 import { NextPage } from 'next';
 import fetch from 'isomorphic-unfetch';
-import Basic from '../src/layouts/Basic';
-import ProjectList from '../src/components/ProjectList';
-import { Projects } from '../src/types/project';
-import { SocialLinks } from '../src/types/socialLink';
+import Basic from '../layouts/Basic';
+import ProjectList from '../components/ProjectList';
+import { Projects } from '../types/project';
+import { SocialLinks } from '../types/socialLink';
 
 interface HomeProps {
   projects: Projects;
