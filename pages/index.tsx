@@ -1,6 +1,5 @@
 import React from 'react';
 import { NextPage } from 'next';
-import fetch from 'isomorphic-unfetch';
 import Basic from '../src/layouts/Basic';
 import ProjectList from '../src/components/ProjectList';
 import { Projects } from '../src/types/project';
