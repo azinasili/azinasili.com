@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 
 const links = [
   { href: 'https://zeit.co/now', label: 'ZEIT', id: 1 },
@@ -10,9 +10,9 @@ const Nav = (): React.ReactElement => (
   <nav>
     <ul>
       <li>
-        <Link href="/">
+        <NextLink href="/">
           <a>Home</a>
-        </Link>
+        </NextLink>
       </li>
       {links.map(({ id, href, label }) => (
         <li key={id}>

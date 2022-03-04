@@ -5,5 +5,3 @@ export interface ProfileLink {
   icon: string;
   id: number;
 }
-
-export type ProfileLinks = ProfileLink[];

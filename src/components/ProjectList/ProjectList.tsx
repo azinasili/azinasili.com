@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from 'next/link';
-import { Project, Projects } from '../../types/project';
+import NextLink from 'next/link';
+import type { Project } from '../../types/Project';
 
 interface ProjectListProps {
-  projects: Projects;
+  projects: Project[];
 }
 
 const ProjectList: React.FC<ProjectListProps> = ({
@@ -34,13 +34,13 @@ const ProjectList: React.FC<ProjectListProps> = ({
       return (
         <React.Fragment key={id}>
           <li>
-            <Link href={url}>
+            <NextLink href={url}>
               <a>
                 <h2>{name}</h2>
                 <p>{description}</p>
                 <ul className="highlight-items">{highlightList(highlights)}</ul>
               </a>
-            </Link>
+            </NextLink>
           </li>
           <style jsx>
             {`

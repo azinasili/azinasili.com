@@ -1,12 +1,12 @@
 import React from 'react';
 import NextLink from 'next/link';
 import NextImage from 'next/image';
-import { ProfileLinks } from '../../types/profile';
+import type { ProfileLink } from '../../types/ProfileLink';
 
 interface HeaderProps {
   title: string;
   subTitle: string;
-  links?: ProfileLinks;
+  links: ProfileLink[];
 }
 
 const Header: React.FC<HeaderProps> = ({
