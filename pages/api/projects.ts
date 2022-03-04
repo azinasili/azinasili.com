@@ -24,6 +24,6 @@ const projects = [
   },
 ];
 
-export default async function handleProfile(_: NextApiRequest, res: NextApiResponse): Promise<void> {
+export default async function handleProjects(_: NextApiRequest, res: NextApiResponse): Promise<void> {
   res.status(200).json(projects);
 }
