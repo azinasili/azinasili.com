@@ -1,7 +1,6 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-// import projects from '../../data/projects.json';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-const PROJECTS = [
+const projects = [
   {
     name: 'Cool Project Title',
     description: 'This was a super cool project',
@@ -25,5 +24,6 @@ const PROJECTS = [
   },
 ];
 
-export default (req: NextApiRequest, res: NextApiResponse) =>
-  res.status(200).json(PROJECTS);
+export default async function handleProjects(_: NextApiRequest, res: NextApiResponse): Promise<void> {
+  res.status(200).json(projects);
+}

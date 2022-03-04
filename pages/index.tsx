@@ -1,13 +1,13 @@
 import React from 'react';
-import { NextPage } from 'next';
+import type { NextPage } from 'next';
+import type { Project } from '../src/types/Project';
+import type { ProfileLink } from '../src/types/ProfileLink';
 import Basic from '../src/layouts/Basic';
 import ProjectList from '../src/components/ProjectList';
-import { Projects } from '../src/types/project';
-import { ProfileLinks } from '../src/types/profile';
 
 interface HomeProps {
-  projects: Projects;
-  profileLinks: ProfileLinks;
+  projects: Project[];
+  profileLinks: ProfileLink[];
 }
 
 const Home: NextPage<HomeProps> = ({ profileLinks, projects }) => (

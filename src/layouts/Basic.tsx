@@ -1,13 +1,13 @@
 import React from 'react';
-import Head from 'next/head';
+import NextHead from 'next/head';
+import type { ProfileLink } from '../types/ProfileLink';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { ProfileLinks } from '../types/profile';
 
 interface BasicProps {
   title: string;
   description: string;
-  profileLinks: ProfileLinks;
+  profileLinks: ProfileLink[];
 }
 
 const Basic: React.FC<BasicProps> = ({
@@ -18,11 +18,11 @@ const Basic: React.FC<BasicProps> = ({
 }): React.ReactElement => (
   <>
     <div className="wrap">
-      <Head>
+      <NextHead>
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </NextHead>
       <Header
         title="Azin Asili"
         subTitle="Front-End Engineer"

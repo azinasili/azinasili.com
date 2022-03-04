@@ -5,5 +5,3 @@ export interface Project {
   highlights: string[];
   id: number;
 }
-
-export type Projects = Project[];
