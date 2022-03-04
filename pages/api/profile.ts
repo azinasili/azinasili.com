@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-// import profile from '../../data/profile.json';
 
-const LINKS = [
+const links = [
   {
     title: 'Github',
     name: 'github',
@@ -39,5 +38,6 @@ const LINKS = [
   },
 ];
 
-export default (req: NextApiRequest, res: NextApiResponse) =>
-  res.status(200).json(LINKS);
+export default async function handleProfile(_: NextApiRequest, res: NextApiResponse): Promise<void> {
+  res.status(200).json(links);
+}

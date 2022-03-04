@@ -1,5 +1,6 @@
 import React from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
+import NextImage from 'next/image';
 import { ProfileLinks } from '../../types/profile';
 
 interface HeaderProps {
@@ -18,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({
       <React.Fragment key={id}>
         <li className="profile-item">
           <a href={url}>
-            <img
+            <NextImage
               src={`/socialmedia/${icon}`}
               alt={urlTitle}
               className="profile-image"
@@ -58,9 +59,9 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <header className="header">
       <h1>
-        <Link href="/">
+        <NextLink href="/">
           <a>{title}</a>
-        </Link>
+        </NextLink>
       </h1>
       <p>{subTitle}</p>
       <ul className="profile-items">{profileLinks}</ul>
