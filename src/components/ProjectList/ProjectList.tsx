@@ -1,6 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
-import type { Project } from '../../types/Project';
+import type { Project } from 'types/Project';
 
 interface ProjectListProps {
   projects: Project[];
