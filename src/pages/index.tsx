@@ -1,9 +1,9 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import type { Project } from '../src/types/Project';
-import type { ProfileLink } from '../src/types/ProfileLink';
-import Basic from '../src/layouts/Basic';
-import ProjectList from '../src/components/ProjectList';
+import type { Project } from 'types/Project';
+import type { ProfileLink } from 'types/ProfileLink';
+import Basic from 'layouts/Basic';
+import ProjectList from 'components/ProjectList';
 
 interface HomeProps {
   projects: Project[];

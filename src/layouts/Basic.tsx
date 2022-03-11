@@ -1,8 +1,8 @@
 import React from 'react';
 import NextHead from 'next/head';
-import type { ProfileLink } from '../types/ProfileLink';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import type { ProfileLink } from 'types/ProfileLink';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 interface BasicProps {
   title: string;

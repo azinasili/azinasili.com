@@ -1,6 +1,6 @@
 import React from 'react';
 import type { NextPage } from 'next';
-import WorkExperience from '../src/components/WorkExperience/WorkExperience';
+import Experience from 'components/Experience';
 
 const ResumePage: NextPage = () => (
   <section>
@@ -19,35 +19,35 @@ const ResumePage: NextPage = () => (
       <li>...</li>
     </ul>
     <h2>Experience</h2>
-    <WorkExperience
-      company="ShopRunner"
+    <Experience
       description="..."
       endYear="Present"
+      institution="ShopRunner"
       startYear="2017"
     />
-    <WorkExperience
-      company="Graphite GTC"
+    <Experience
       description="..."
       endYear="2017"
+      institution="Graphite GTC"
       startYear="2013"
     />
-    <WorkExperience
-      company="GSW"
+    <Experience
       description="..."
       endYear="2013"
+      institution="GSW"
       startYear="2013"
     />
-    <WorkExperience
-      company="AG Marketing Company"
+    <Experience
       description="..."
       endYear="2013"
+      institution="AG Marketing Company"
       startYear="2011"
     />
     <h2>Education</h2>
-    <WorkExperience
-      company="Drexel University"
+    <Experience
       description="..."
       endYear="2011"
+      institution="Drexel University"
       startYear="2007"
     />
   </section>

@@ -1,7 +1,6 @@
 import React from 'react';
 import NextLink from 'next/link';
-import NextImage from 'next/image';
-import type { ProfileLink } from '../../types/ProfileLink';
+import type { ProfileLink } from 'types/ProfileLink';
 
 interface HeaderProps {
   title: string;
@@ -19,10 +18,10 @@ const Header: React.FC<HeaderProps> = ({
       <React.Fragment key={id}>
         <li className="profile-item">
           <a href={url}>
-            <NextImage
-              src={`/socialmedia/${icon}`}
+            <img
               alt={urlTitle}
               className="profile-image"
+              src={`/socialmedia/${icon}`}
             />
             <span className="profile-name">{urlTitle}</span>
           </a>
