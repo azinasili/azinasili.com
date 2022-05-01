@@ -1,18 +1,16 @@
 import React from 'react';
 import NextLink from 'next/link';
-import type { ProfileLink } from 'types/ProfileLink';
+import type { ProfileLink } from 'types/Profile';
 
 interface HeaderProps {
   title: string;
-  subTitle: string;
   links: ProfileLink[];
 }
 
 const Header: React.FC<HeaderProps> = ({
   title,
-  subTitle,
   links,
-}): React.ReactElement => {
+}) => {
   const profileLinks = links.map(({ id, url, title: urlTitle, icon }) => {
     return (
       <React.Fragment key={id}>
@@ -62,7 +60,6 @@ const Header: React.FC<HeaderProps> = ({
           <a>{title}</a>
         </NextLink>
       </h1>
-      <p>{subTitle}</p>
       <ul className="profile-items">{profileLinks}</ul>
       <style jsx>
         {`
