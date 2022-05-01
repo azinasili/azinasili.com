@@ -4,8 +4,8 @@ import type { Project } from 'types/Project';
 import type { ProfileLink } from 'types/Profile';
 import Basic from 'layouts/Basic';
 import ProjectList from 'components/ProjectList';
-import getProjects from 'server/service/projects/get';
-import getProfileLinks from 'server/service/profile/get';
+import getProjects from 'server/getProjects';
+import getProfileLinks from 'server/getProfileLinks';
 
 interface HomePageProps {
   projects: Project[];
