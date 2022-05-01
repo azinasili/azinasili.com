@@ -1,6 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next';
 import Experience from 'components/Experience';
+import ExperienceGroup from 'components/ExperienceGroup';
 
 const ResumePage: NextPage = () => (
   <section>
@@ -13,18 +14,41 @@ const ResumePage: NextPage = () => (
     </ul>
     <h2>Skills</h2>
     <ul>
+      <li>TypeScript</li>
       <li>JavaScript</li>
+      <li>Node.js</li>
+      <li>Express.js</li>
       <li>React</li>
-      <li>Next</li>
-      <li>...</li>
+      <li>Next.js</li>
+      <li>Kotlin</li>
+      <li>Python</li>
+      <li>Sass</li>
+      <li>CSS</li>
+      <li>Figma</li>
+      <li>Sketch</li>
+      <li>Adobe Suite</li>
     </ul>
     <h2>Experience</h2>
-    <Experience
-      description="..."
-      endYear="Present"
-      institution="ShopRunner"
-      startYear="2017"
-    />
+    <ExperienceGroup>
+      <Experience
+        description="..."
+        endYear="Present"
+        institution="ShopRunner"
+        startYear="2017"
+      />
+      <Experience
+        description="..."
+        endYear="Present"
+        institution="ShopRunner"
+        startYear="2017"
+      />
+      <Experience
+        description="..."
+        endYear="Present"
+        institution="ShopRunner"
+        startYear="2017"
+      />
+    </ExperienceGroup>
     <Experience
       description="..."
       endYear="2017"
