@@ -17,4 +17,4 @@ const Experience: React.FC<ExperienceProps> = ({ institution, description, endYe
   )
 };
 
-export default Experience;
+export default React.memo(Experience);

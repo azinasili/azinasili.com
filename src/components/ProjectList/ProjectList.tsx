@@ -8,7 +8,7 @@ interface ProjectListProps {
 
 const ProjectList: React.FC<ProjectListProps> = ({
   projects,
-}): React.ReactElement => {
+}) => {
   const highlightList = (
     highlights: Project['highlights'],
   ): React.ReactElement[] =>
@@ -71,4 +71,4 @@ const ProjectList: React.FC<ProjectListProps> = ({
   );
 };
 
-export default ProjectList;
+export default React.memo(ProjectList);

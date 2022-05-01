@@ -57,4 +57,4 @@ const Basic: React.FC<BasicProps> = ({
   </>
 );
 
-export default Basic;
+export default React.memo(Basic);

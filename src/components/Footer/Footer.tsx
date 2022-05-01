@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer: React.FC<{}> = (): React.ReactElement => (
+const Footer: React.FC = () => (
   <>
     <footer className="footer">
       <p>
@@ -18,4 +18,4 @@ const Footer: React.FC<{}> = (): React.ReactElement => (
   </>
 );
 
-export default React.memo(Footer);
+export default Footer;
