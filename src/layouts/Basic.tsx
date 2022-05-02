@@ -1,8 +1,8 @@
 import React from 'react';
-import NextHead from 'next/head';
 import type { ProfileLink } from 'types/Profile';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Seo from './Seo';
 
 interface BasicProps {
   title: string;
@@ -17,13 +17,8 @@ const Basic: React.FC<BasicProps> = ({
   profileLinks,
   children,
 }) => (
-  <>
+  <Seo title={title} description={description}>
     <div className="wrap">
-      <NextHead>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="icon" href="/favicon.ico" />
-      </NextHead>
       <Header
         title="Azin Asili"
         links={profileLinks}
@@ -54,7 +49,7 @@ const Basic: React.FC<BasicProps> = ({
         }
       `}
     </style>
-  </>
+  </Seo>
 );
 
 export default React.memo(Basic);
