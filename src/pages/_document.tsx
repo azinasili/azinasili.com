@@ -23,33 +23,22 @@ export default class AzinAsiliDocument extends Document {
       const initialProps = await Document.getInitialProps(ctx);
       return {
         ...initialProps,
-        // @ts-expect-error DocumentInitialProps and `sheet` types do not match
-        styles: (
+        styles: [
           <>
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        ],
       }
     } finally {
       sheet.seal();
     }
   }
 
-  render(): React.ReactElement {
+  render(): JSX.Element {
     return (
       <Html lang="en">
-        <Head>
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://unpkg.com/normalize.css"
-          />
-          <link
-            href="https://fonts.googleapis.com/css?family=Courier+Prime:400,400i,700,700i&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
