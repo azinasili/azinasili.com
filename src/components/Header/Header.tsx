@@ -15,11 +15,13 @@ const Header: React.FC<HeaderProps> = ({
     return (
       <React.Fragment key={id}>
         <li className="profile-item">
-          <a href={url}>
+          <a href={url} rel="noreferrer noopener">
             <img
               alt={urlTitle}
               className="profile-image"
+              height={16}
               src={`/socialmedia/${icon}`}
+              width={16}
             />
             <span className="profile-name">{urlTitle}</span>
           </a>
