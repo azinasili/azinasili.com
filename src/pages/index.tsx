@@ -4,6 +4,7 @@ import type { Project } from 'types/Project';
 import type { ProfileLink } from 'types/Profile';
 import getProjects from 'server/getProjects';
 import getProfileLinks from 'server/getProfileLinks';
+import Footer from 'components/Footer';
 import ProfileLinks from 'components/ProfileLinks';
 
 interface HomePageProps {
@@ -35,6 +36,7 @@ const Home: NextPage<HomePageProps> = ({ profileLinks, projects }) => (
       <h2>Some Projects</h2>
       <p>...</p>
     </main>
+    <Footer />
   </>
 );
 
