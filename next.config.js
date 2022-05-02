@@ -6,17 +6,18 @@ const nextConfig = {
     styledComponents: true,
   },
   reactStrictMode: true,
-  swcMinify: true,
-  async redirects() {
-    return [
-      process.env.NODE_ENV === 'production' &&
-      {
-        source: '/resume',
-        destination: '/',
-        permanent: false,
-      },
-    ];
-  },
+  swcMinify: process.env.NODE_ENV === 'production',
+  ...(process.env.NODE_ENV === 'production' && {
+    async redirects() {
+      return [
+        {
+          source: '/resume',
+          destination: '/',
+          permanent: false,
+        },
+      ];
+    },
+  }),
 };
 
 module.exports = nextConfig;
