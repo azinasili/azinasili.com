@@ -11,7 +11,7 @@ const Header: React.FC<HeaderProps> = ({
   title,
   links,
 }) => {
-  const profileLinks = links.map(({ id, url, title: urlTitle, icon }) => {
+  const profileLinks = links.map(({ id, url, title: urlTitle, iconPath }) => {
     return (
       <React.Fragment key={id}>
         <li className="profile-item">
@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({
               alt={urlTitle}
               className="profile-image"
               height={16}
-              src={`/socialmedia/${icon}`}
+              src={`/socialmedia/${iconPath}`}
               width={16}
             />
             <span className="profile-name">{urlTitle}</span>
