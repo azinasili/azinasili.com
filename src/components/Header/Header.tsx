@@ -1,27 +1,27 @@
 import React from 'react';
 import NextLink from 'next/link';
-import type { ProfileLink } from 'types/ProfileLink';
+import type { ProfileLink } from 'types/Profile';
 
 interface HeaderProps {
   title: string;
-  subTitle: string;
   links: ProfileLink[];
 }
 
 const Header: React.FC<HeaderProps> = ({
   title,
-  subTitle,
   links,
-}): React.ReactElement => {
-  const profileLinks = links.map(({ id, url, title: urlTitle, icon }) => {
+}) => {
+  const profileLinks = links.map(({ id, url, title: urlTitle, iconPath }) => {
     return (
       <React.Fragment key={id}>
         <li className="profile-item">
-          <a href={url}>
+          <a href={url} rel="noreferrer noopener">
             <img
               alt={urlTitle}
               className="profile-image"
-              src={`/socialmedia/${icon}`}
+              height={16}
+              src={`/socialmedia/${iconPath}`}
+              width={16}
             />
             <span className="profile-name">{urlTitle}</span>
           </a>
@@ -62,7 +62,6 @@ const Header: React.FC<HeaderProps> = ({
           <a>{title}</a>
         </NextLink>
       </h1>
-      <p>{subTitle}</p>
       <ul className="profile-items">{profileLinks}</ul>
       <style jsx>
         {`
@@ -80,4 +79,4 @@ const Header: React.FC<HeaderProps> = ({
   );
 };
 
-export default Header;
+export default React.memo(Header);

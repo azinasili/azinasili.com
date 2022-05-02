@@ -1,33 +1,43 @@
 import React from 'react';
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import type { Project } from 'types/Project';
-import type { ProfileLink } from 'types/ProfileLink';
-import Basic from 'layouts/Basic';
-import ProjectList from 'components/ProjectList';
+import type { ProfileLink } from 'types/Profile';
+import getProjects from 'server/getProjects';
+import getProfileLinks from 'server/getProfileLinks';
+import Footer from 'components/Footer';
+import ProfileLinks from 'components/ProfileLinks';
 
-interface HomeProps {
+interface HomePageProps {
   projects: Project[];
   profileLinks: ProfileLink[];
 }
 
-const Home: NextPage<HomeProps> = ({ profileLinks, projects }) => (
-  <Basic title="Home" description="my home page" profileLinks={profileLinks}>
-    <p>
-      I&apos;m a front-end developer with a passion for building interfaces. I
-      rely heavily on my design background to create beautiful products. Besides
-      development I enjoy craft beer and talking tech.
-    </p>
-    <ProjectList projects={projects} />
-  </Basic>
+export const getServerSideProps: GetServerSideProps<HomePageProps> = async () => {
+  const profileLinks = await getProfileLinks();
+  const projects = await getProjects();
+  return {
+    props: { profileLinks, projects },
+  };
+}
+
+const Home: NextPage<HomePageProps> = ({ profileLinks, projects }) => (
+  <>
+    <header>
+      <h1>Hi</h1>
+    </header>
+    <main>
+      <p>
+        I&apos;m a software engineer with a passion for building for the web. I
+        rely heavily on my design background to create beautiful experiences. Besides
+        development, I enjoy craft beer and talking tech.
+      </p>
+      <h2>Find me</h2>
+      <ProfileLinks profileLinks={profileLinks} />
+      <h2>Some Projects</h2>
+      <p>...</p>
+    </main>
+    <Footer />
+  </>
 );
-
-Home.getInitialProps = async (): Promise<HomeProps> => {
-  const profileResponse = await fetch('http://localhost:3000/api/profile');
-  const projectsResponse = await fetch('http://localhost:3000/api/projects');
-  const profileLinks = await profileResponse.json();
-  const projects = await projectsResponse.json();
-
-  return { profileLinks, projects };
-};
 
 export default Home;
