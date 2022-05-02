@@ -62,7 +62,6 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: var(--heading1-font-size);
-    margin-top: 0;
   }
 
   h2 {
