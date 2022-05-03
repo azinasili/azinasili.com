@@ -40,6 +40,6 @@ const ProfileLinkItem: React.FC<ProfileLink> = ({ iconPath, title, url }) => {
       </a>
     </Item>
   );
-}
+};
 
 export default React.memo(ProfileLinkItem);
