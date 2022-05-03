@@ -5,7 +5,7 @@ import ProfileLinkItem from './ProfileLinkItem';
 
 interface ProfileLinksProps {
   profileLinks: ProfileLink[];
-};
+}
 
 const Items = styled.ul`
   list-style: none;
@@ -14,8 +14,8 @@ const Items = styled.ul`
 
 const ProfileLinks: React.FC<ProfileLinksProps> = ({ profileLinks }) => {
   return (
-    <Items>{profileLinks.map(profileLink => <ProfileLinkItem key={profileLink.id} {...profileLink} />)}</Items>
+    <Items>{profileLinks.map(profileLink => <ProfileLinkItem {...profileLink} key={profileLink.id} />)}</Items>
   );
-}
+};
 
-export default ProfileLinks;
+export default React.memo(ProfileLinks);

@@ -4,7 +4,8 @@ import { em } from 'polished';
 
 const StyledFooter = styled.footer`
   font-size: ${em(12)};
-`
+  margin-bottom: 0;
+`;
 
 const Footer: React.FC = () => (
   <StyledFooter>

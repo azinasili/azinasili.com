@@ -31,7 +31,7 @@ export default async function getProfileLinks(): Promise<ProfileLink[]> {
       id: 4,
     },
     {
-      title: 'hello@azinasili.com',
+      title: 'Contact',
       name: 'gmail',
       url: 'mailto:hello@azinasili.com',
       iconPath: 'icon_email.svg',

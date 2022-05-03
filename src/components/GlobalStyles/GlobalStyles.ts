@@ -39,6 +39,12 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+
   body {
     background-color: var(--app-background-color);
     color: var(--app-text-color);
