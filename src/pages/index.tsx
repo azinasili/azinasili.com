@@ -7,6 +7,7 @@ import { getProfileLinks } from 'server/getProfileLinks';
 import { Basic } from 'layouts/Basic';
 import { ProfileLinks } from 'components/ProfileLinks';
 import { ProjectList } from 'components/ProjectList';
+import Greeting from 'components/Greeting';
 
 interface HomePageProps {
   projects: Project[];
@@ -21,10 +22,8 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
   };
 }
 
-const Header: FC = () => <h1>👋 Hi</h1>;
-
 const Home: NextPage<HomePageProps> = ({ profileLinks, projects }) => (
-  <Basic title="foo" description="bar" headerSlot={<Header />}>
+  <Basic title="foo" description="bar" headerSlot={<Greeting />}>
     <p>
       I&apos;m a software engineer with a passion for building for the web. I rely heavily on my design background to create beautiful experiences. Currently I am a <a href="https://www.shoprunner.com/" rel="noreferrer noopener">lead engineer at ShopRunner</a>. Besides development, I enjoy craft beer and watching Marvel movies and shows.
     </p>
