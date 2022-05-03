@@ -4,11 +4,10 @@ import Common from './Common';
 import Seo from './Seo';
 
 interface BasicProps {
-  children: React.ReactNode;
+  title: string;
   description: string;
   headerSlot: React.ReactNode;
-  profileLinks: ProfileLink[];
-  title: string;
+  children: React.ReactNode;
 }
 
 const Basic: React.FC<BasicProps> = ({
