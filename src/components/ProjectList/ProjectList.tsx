@@ -1,8 +1,8 @@
 import type { FC } from 'react';
 import { memo } from 'react';
 import type { Project } from 'types/Project';
-import ProjectItem from './ProjectListItem';
 import { PointerList } from 'components/PointerList';
+import ProjectItem from './ProjectListItem';
 
 interface ProjectListProps {
   projects: Project[];
