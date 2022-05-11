@@ -1,25 +1,46 @@
 import type { Project } from 'types/Project';
 
-export default async function getProjects(): Promise<Project[]> {
+export async function getProjects(): Promise<Project[]> {
   return [
     {
-      name: 'Cool Project Title',
+      name: 'a11yoffcanvas',
       description: 'This was a super cool project',
-      url: '/one',
+      url: 'https://github.com/azinasili/a11yoffcanvas',
       highlights: ['thing01', 'thing02', 'thing03'],
       id: 1,
     },
     {
-      name: 'This is another neat one',
+      name: 'a11ytab',
+      description: 'This was a super cool project',
+      url: 'https://github.com/azinasili/a11ytab',
+      highlights: ['thing01', 'thing02', 'thing03'],
+      id: 1,
+    },
+    {
+      name: 'a11ymodal',
+      description: 'This was a super cool project',
+      url: 'https://github.com/azinasili/a11ymodal',
+      highlights: ['thing01', 'thing02', 'thing03'],
+      id: 1,
+    },
+    {
+      name: 'a11ytrap',
+      description: 'This was a super cool project',
+      url: 'https://github.com/azinasili/a11ytrap',
+      highlights: ['thing01', 'thing02', 'thing03'],
+      id: 1,
+    },
+    {
+      name: 'Wingman',
       description: 'Amazingly cool stuff',
-      url: '/two',
+      url: 'https://github.com/azinasili/wingman',
       highlights: ['thing01', 'thing02', 'thing03', 'thing04'],
       id: 2,
     },
     {
-      name: 'Very cool of me!',
+      name: 'Dragit',
       description: 'I know right',
-      url: '/three',
+      url: 'https://github.com/azinasili/dragit',
       highlights: ['thing01', 'thing02'],
       id: 3,
     },

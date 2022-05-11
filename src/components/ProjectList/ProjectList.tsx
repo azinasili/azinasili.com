@@ -1,74 +1,21 @@
-import React from 'react';
-import NextLink from 'next/link';
+import type { FC } from 'react';
+import { memo } from 'react';
 import type { Project } from 'types/Project';
+import styled from 'styled-components';
+import ProjectItem from './ProjectListItem';
+import { PointerList } from 'components/PointerList';
 
 interface ProjectListProps {
   projects: Project[];
 }
 
-const ProjectList: React.FC<ProjectListProps> = ({
-  projects,
-}) => {
-  const highlightList = (
-    highlights: Project['highlights'],
-  ): React.ReactElement[] =>
-    highlights.map(highlight => (
-      <React.Fragment key={highlights.indexOf(highlight)}>
-        <li className="highlight-item">{highlight}</li>
-        <style jsx>
-          {`
-            .highlight-item {
-              display: inline-block;
-            }
+const Items = styled(PointerList)`
+  list-style: none;
+  padding-left: 0;
+`;
 
-            .highlight-item:not(:last-child) {
-              margin-right: 1.25em;
-            }
-          `}
-        </style>
-      </React.Fragment>
-    ));
-
-  const projectLinks = projects.map(
-    ({ id, url, name, description, highlights }) => {
-      return (
-        <React.Fragment key={id}>
-          <li>
-            <NextLink href={url}>
-              <a>
-                <h2>{name}</h2>
-                <p>{description}</p>
-                <ul className="highlight-items">{highlightList(highlights)}</ul>
-              </a>
-            </NextLink>
-          </li>
-          <style jsx>
-            {`
-              .highlight-items {
-                font-size: 0.875em;
-                list-style: none;
-                padding-left: 0;
-              }
-            `}
-          </style>
-        </React.Fragment>
-      );
-    },
-  );
-
-  return (
-    <>
-      <ul className="projects">{projectLinks}</ul>
-      <style jsx>
-        {`
-          .projects {
-            list-style: none;
-            padding-left: 0;
-          }
-        `}
-      </style>
-    </>
-  );
+const ProjectList: FC<ProjectListProps> = ({ projects }) => {
+  return <Items>{projects.map(project => <ProjectItem {...project} key={project.id} />)}</Items>
 };
 
-export default React.memo(ProjectList);
+export default memo(ProjectList);

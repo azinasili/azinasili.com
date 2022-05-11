@@ -1,17 +1,9 @@
-import React from 'react';
+import type { FC } from 'react';
+import { memo } from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
 import type { ProfileLink } from 'types/Profile';
-
-const Item = styled.li`
-  &:not(:first-child) {
-    margin-top: ${em(8)};
-  }
-
-  &:not(:last-child) {
-    margin-bottom: ${em(8)};
-  }
-`;
+import { PointerList } from 'components/PointerList';
 
 const Image = styled.img`
   display: inline-block;
@@ -26,9 +18,9 @@ const Name = styled.span`
   display: inline-block;
 `;
 
-const ProfileLinkItem: React.FC<ProfileLink> = ({ iconPath, title, url }) => {
+const ProfileLinkItem: FC<ProfileLink> = ({ iconPath, title, url }) => {
   return (
-    <Item>
+    <PointerList.Item>
       <a href={url} rel="noreferrer noopener">
         <Image
           alt={title}
@@ -38,8 +30,8 @@ const ProfileLinkItem: React.FC<ProfileLink> = ({ iconPath, title, url }) => {
         />
         <Name>{title}</Name>
       </a>
-    </Item>
+    </PointerList.Item>
   );
 };
 
-export default React.memo(ProfileLinkItem);
+export default memo(ProfileLinkItem);

@@ -45,6 +45,19 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: inherit;
   }
 
+  /**
+   * This element wraps each page. It's being utilized to create the layout
+   * of a background img/color spanning the entire page.
+   */
+  #__next {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    & > :first-child {
+    flex: 1;
+  }
+
   body {
     background-color: var(--app-background-color);
     color: var(--app-text-color);

@@ -1,6 +1,6 @@
 import type { ProfileLink } from 'types/Profile';
 
-export default async function getProfileLinks(): Promise<ProfileLink[]> {
+export async function getProfileLinks(): Promise<ProfileLink[]> {
   return [
     {
       title: 'Github',
