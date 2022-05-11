@@ -1,6 +1,5 @@
-import React from 'react';
 import type { AppProps } from 'next/app';
-import GlobalStyles from 'components/GlobalStyles';
+import { GlobalStyles } from 'components/GlobalStyles';
 
 export default function AzinAsiliApp({
   Component,
