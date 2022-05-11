@@ -4,7 +4,7 @@ import { normalize } from 'polished';
 const GlobalStyles = createGlobalStyle`
   ${normalize}
 
-  // [1] Use percentage for better a11y and scalability.
+  // [1] Percentage is used for better a11y and scalability.
   // Project uses \`em\` CSS units. Using a percentage value
   // allows users to override \`font-size\` with their browser settings.
   :root {
@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     --app-line-height: 1.65;
     --app-text-color: hsla(218, 22, 20, 1);
 
-    --root-font-size: 115%; // [1]
+    --app-font-scaler: 115%; // [1]
     --heading1-font-size: 2.488em;
     --heading2-font-size: 2.074em;
     --heading3-font-size: 1.728em;
@@ -31,12 +31,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    font-size: var(--root-font-size); // [1]
     box-sizing: border-box;
-
-    @media (min-width: 40em) {
-      --root-font-size: 125%; // [1]
-    }
   }
 
   *,
@@ -55,14 +50,15 @@ const GlobalStyles = createGlobalStyle`
     height: 100vh;
 
     & > :first-child {
-    flex: 1;
+      flex: 1;
+    }
   }
 
   body {
     background-color: var(--app-background-color);
     color: var(--app-text-color);
     font-family: var(--app-primary-font-family);
-    font-size: 1em;
+    font-size: var(--app-font-scaler);
     font-weight: var(--app-font-weight);
     line-height: var(--app-line-height);
   }
