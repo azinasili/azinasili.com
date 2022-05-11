@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC } from 'react';
 import styled from 'styled-components';
 
 const GradientText = styled.span`
@@ -10,6 +10,6 @@ const GradientText = styled.span`
   -webkit-text-fill-color: transparent;
 `;
 
-const Greeting: React.FC = () => <h1>👋 <GradientText>Hi</GradientText></h1>;
+const Greeting: FC = () => <h1>👋 <GradientText>Hi</GradientText></h1>;
 
 export default Greeting;
