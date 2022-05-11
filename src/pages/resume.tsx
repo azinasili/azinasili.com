@@ -1,4 +1,3 @@
-import React from 'react';
 import type { NextPage } from 'next';
 import Experience from 'components/Experience';
 import ExperienceGroup from 'components/ExperienceGroup';

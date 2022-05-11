@@ -30,8 +30,10 @@ type PointerListProps = FC<WithChildrenProp & HTMLAttributes<HTMLUListElement>> 
   Item: typeof PointerListItem;
 };
 
-export const PointerList: PointerListProps = ({ children, ...props }) => {
+const PointerList: PointerListProps = ({ children, ...props }) => {
   return <ul {...props}>{children}</ul>
 };
 
 PointerList.Item = PointerListItem;
+
+export default PointerList;

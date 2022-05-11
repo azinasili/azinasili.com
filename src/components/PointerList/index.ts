@@ -1,1 +1,1 @@
-export { PointerList } from './PointerList';
+export { default as PointerList } from './PointerList';
