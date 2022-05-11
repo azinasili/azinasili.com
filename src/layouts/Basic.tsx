@@ -1,16 +1,17 @@
-import React from 'react';
-import Footer from './Footer';
-import Common from './Common';
-import Seo from './Seo';
+import type { FC, ReactNode } from 'react';
+import { memo } from 'react';
+import { Common } from './Common';
+import { Footer } from './Footer';
+import { Seo } from './Seo';
 
 interface BasicProps {
   title: string;
   description: string;
-  headerSlot: React.ReactNode;
-  children: React.ReactNode;
+  headerSlot: ReactNode;
+  children: ReactNode;
 }
 
-const Basic: React.FC<BasicProps> = ({
+const BasicInner: FC<BasicProps> = ({
   children,
   description,
   headerSlot,
@@ -25,4 +26,4 @@ const Basic: React.FC<BasicProps> = ({
   </Seo>
 );
 
-export default React.memo(Basic);
+export const Basic = memo(BasicInner);

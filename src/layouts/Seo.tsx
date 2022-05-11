@@ -1,13 +1,14 @@
-import React from 'react';
+import type { FC, ReactNode } from 'react';
+import { memo } from 'react';
 import NextHead from 'next/head';
 
 interface SeoProps {
   title: string;
   description: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const Seo: React.FC<SeoProps> = ({
+const SeoInner: FC<SeoProps> = ({
   title,
   description,
   children,
@@ -21,4 +22,4 @@ const Seo: React.FC<SeoProps> = ({
   </>
 );
 
-export default React.memo(Seo);
+export const Seo = memo(SeoInner);
