@@ -17,20 +17,6 @@ export async function getProfileLinks(): Promise<ProfileLink[]> {
       id: 2,
     },
     {
-      title: 'Medium',
-      name: 'medium',
-      url: 'https://medium.com/@azinasili',
-      iconPath: 'icon_medium.svg',
-      id: 3,
-    },
-    {
-      title: 'Twitter',
-      name: 'twitter',
-      url: 'https://twitter.com/azinasili',
-      iconPath: 'icon_twitter.svg',
-      id: 4,
-    },
-    {
       title: 'Contact',
       name: 'gmail',
       url: 'mailto:hello@azinasili.com',

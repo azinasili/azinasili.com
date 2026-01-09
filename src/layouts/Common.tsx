@@ -6,7 +6,6 @@ interface CommonProps {
 
 const Wrapper = styled.div`
   display: grid;
-  grid-row-gap: 2em;
   grid-template-columns: minmax(auto, 63ch);
   grid-template-rows: auto 1fr auto;
   padding: 2em;
