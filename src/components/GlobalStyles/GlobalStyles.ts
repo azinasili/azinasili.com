@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   ${normalize}
 
   // [1] Percentage is used for better a11y and scalability.
@@ -14,14 +14,14 @@ const GlobalStyles = createGlobalStyle`
     --app-line-height: 1.65;
     --app-text-color: hsla(218, 22, 20, 1);
 
-    --app-font-scaler: 115%; // [1]
-    --heading1-font-size: 2.488em;
-    --heading2-font-size: 2.074em;
-    --heading3-font-size: 1.728em;
-    --heading4-font-size: 1.44em;
-    --heading5-font-size: 1.2em;
-    --heading6-font-size: 1em;
-    --small-font-size: 0.833em;
+    --app-font-scaler: 100%; // [1]
+    --heading1-font-size: 2.027em;
+    --heading2-font-size: 1.802em;
+    --heading3-font-size: 1.602em;
+    --heading4-font-size: 1.424em;
+    --heading5-font-size: 1.266em;
+    --heading6-font-size: 1.125em;
+    --small-font-size: 0.889em;
 
     --heading-font-weight: 700;
     --heading-line-height: 1.15;
@@ -107,5 +107,3 @@ const GlobalStyles = createGlobalStyle`
     font-size: var(--small-font-size);
   }
 `;
-
-export default GlobalStyles;

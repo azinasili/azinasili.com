@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const StyledChip = styled.div`
@@ -6,8 +5,6 @@ const StyledChip = styled.div`
   position: relative;
 `;
 
-const Chip: React.FC = () => {
+export function Chip() {
   return <StyledChip>a chip</StyledChip>;
-};
-
-export default Chip;
+}

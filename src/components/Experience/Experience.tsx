@@ -7,14 +7,12 @@ interface ExperienceProps {
   startYear: string;
 }
 
-const Experience: React.FC<ExperienceProps> = ({ institution, description, endYear, startYear }) => {
+export function Experience({ institution, description, endYear, startYear }: ExperienceProps) {
   return (
-    <>
+    <React.Fragment>
       <p>{startYear} - {endYear}</p>
       <h3>{institution}</h3>
       <p>{description}</p>
-    </>
-  )
-};
-
-export default React.memo(Experience);
+    </React.Fragment>
+  );
+}

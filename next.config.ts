@@ -1,12 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   compiler: {
     reactRemoveProperties: true,
     removeConsole: process.env.NODE_ENV === 'production',
     styledComponents: true,
   },
   reactStrictMode: true,
-  swcMinify: process.env.NODE_ENV === 'production',
   ...(process.env.NODE_ENV === 'production' && {
     async redirects() {
       return [
@@ -20,4 +20,4 @@ const nextConfig = {
   }),
 };
 
-module.exports = nextConfig;
+export default nextConfig;
