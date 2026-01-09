@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
     styledComponents: true,
   },
   reactStrictMode: true,
-  swcMinify: process.env.NODE_ENV === 'production',
   ...(process.env.NODE_ENV === 'production' && {
     async redirects() {
       return [
