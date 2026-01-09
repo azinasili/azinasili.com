@@ -1,5 +1,4 @@
-import type { FC, ReactNode } from 'react';
-import { memo } from 'react';
+import type { ReactNode } from 'react';
 import { Common } from './Common';
 import { Footer } from './Footer';
 import { Seo } from './Seo';
@@ -11,19 +10,19 @@ interface BasicProps {
   children: ReactNode;
 }
 
-const BasicInner: FC<BasicProps> = ({
+export function Basic({
   children,
   description,
   headerSlot,
   title,
-}) => (
-  <Seo title={title} description={description}>
-    <Common>
-      <header>{headerSlot}</header>
-      <main>{children}</main>
-      <Footer />
-    </Common>
-  </Seo>
-);
-
-export const Basic = memo(BasicInner);
+}: BasicProps) {
+  return (
+    <Seo title={title} description={description}>
+      <Common>
+        <header>{headerSlot}</header>
+        <main>{children}</main>
+        <Footer />
+      </Common>
+    </Seo>
+  );
+}

@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
 
@@ -12,8 +11,10 @@ const StyledParagraph = styled.p`
   margin-top: 0;
 `;
 
-export const Footer: FC = () => (
-  <StyledFooter>
-    <StyledParagraph>&copy;{new Date().getFullYear()} Azin Asili. All Rights Reserved.</StyledParagraph>
-  </StyledFooter>
-);
+export function Footer() {
+  return (
+    <StyledFooter>
+      <StyledParagraph>&copy;{new Date().getFullYear()} Azin Asili. All Rights Reserved.</StyledParagraph>
+    </StyledFooter>
+  );
+}

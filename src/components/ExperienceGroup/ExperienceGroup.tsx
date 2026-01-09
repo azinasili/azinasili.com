@@ -1,11 +1,7 @@
-import React from 'react';
+import type { PropsWithChildren } from 'react';
 
-interface ExperienceGroupProps {
-  children: React.ReactNode;
-}
+type ExperienceGroupProps = PropsWithChildren<unknown>;
 
-const ExperienceGroup: React.FC<ExperienceGroupProps> = ({ children }) => {
+export function ExperienceGroup({ children }: ExperienceGroupProps) {
   return <div>{children}</div>;
-};
-
-export default React.memo(ExperienceGroup);
+}

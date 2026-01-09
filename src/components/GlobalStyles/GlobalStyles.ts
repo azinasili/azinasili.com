@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { normalize } from 'polished';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   ${normalize}
 
   // [1] Percentage is used for better a11y and scalability.
@@ -107,5 +107,3 @@ const GlobalStyles = createGlobalStyle`
     font-size: var(--small-font-size);
   }
 `;
-
-export default GlobalStyles;

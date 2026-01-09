@@ -1,5 +1,4 @@
-import type { FC, ReactNode } from 'react';
-import { memo } from 'react';
+import React, { type ReactNode } from 'react';
 import NextHead from 'next/head';
 
 interface SeoProps {
@@ -8,18 +7,18 @@ interface SeoProps {
   children: ReactNode;
 }
 
-const SeoInner: FC<SeoProps> = ({
+export function Seo({
   title,
   description,
   children,
-}) => (
-  <>
-    <NextHead>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-    </NextHead>
-    {children}
-  </>
-);
-
-export const Seo = memo(SeoInner);
+}: SeoProps) {
+  return (
+    <React.Fragment>
+      <NextHead>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </NextHead>
+      {children}
+    </React.Fragment>
+  );
+}

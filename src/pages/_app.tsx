@@ -4,7 +4,7 @@ import { GlobalStyles } from 'components/GlobalStyles';
 export default function AzinAsiliApp({
   Component,
   pageProps,
-}: AppProps): JSX.Element {
+}: AppProps) {
   return (
     <>
       <GlobalStyles />

@@ -1,4 +1,3 @@
-import type { FC } from 'react';
 import type { GetServerSideProps, NextPage } from 'next';
 import type { Project } from 'types/Project';
 import type { ProfileLink } from 'types/Profile';
@@ -21,7 +20,9 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
   };
 }
 
-const Header: FC = () => <h1>👋 Hi</h1>;
+function Header() {
+  return <h1>👋 Hi</h1>;
+}
 
 const Home: NextPage<HomePageProps> = ({ profileLinks, projects }) => (
   <Basic title="foo" description="bar" headerSlot={<Header />}>

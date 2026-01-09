@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-import { memo } from 'react';
 import styled from 'styled-components';
 
 interface CommonProps {
@@ -14,6 +12,6 @@ const Wrapper = styled.div`
   padding: 2em;
 `;
 
-const CommonInner: FC<CommonProps> = ({ children }) => <Wrapper>{children}</Wrapper>;
-
-export const Common = memo(CommonInner);
+export function Common({ children }: CommonProps) {
+  return <Wrapper>{children}</Wrapper>
+}
