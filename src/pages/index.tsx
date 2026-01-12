@@ -22,7 +22,7 @@ export const getServerSideProps = (async () => {
 
 export default function Home({ profileLinks, projects }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <Basic title="Azin Asili" description="Welcome to my small corner of the web" headerSlot={<h1>👋 Hi</h1>}>
+    <Basic title="Azin" description="Welcome to my small corner of the web" headerSlot={<h1>👋 Hi</h1>}>
       <p>
         I&apos;m a software engineer with a passion for building for the web. I rely heavily on my design background to create beautiful experiences. Currently I am a software engineer lead at FedEx Dataworks.
       </p>
