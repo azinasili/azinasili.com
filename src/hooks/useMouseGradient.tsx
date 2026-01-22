@@ -14,10 +14,11 @@ type UseMouseGradientReturn = [RefCallback<HTMLElement>];
  * --mouse-y-pct: vertical position as a decimal (0 to 1)
  */
 function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
-  let point: MouseEvent | Touch;
   const rect = root.getBoundingClientRect();
 
   return function eventHandler(event: TrackingEvent) {
+    let point: MouseEvent | Touch;
+
     if ('touches' in event) {
       point = event.touches[0];
       // Note: touchmove can sometimes have empty touches if the finger is lifted
