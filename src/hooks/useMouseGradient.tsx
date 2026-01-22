@@ -1,6 +1,6 @@
 import { type RefCallback, useCallback, useEffect, useState } from 'react';
 
-type handleMouseTrackingReturn = (event: MouseEvent) => void;
+type HandleMouseTrackingReturn = (event: MouseEvent) => void;
 
 type UseMouseGradientReturn = [RefCallback<HTMLElement>];
 
@@ -11,7 +11,7 @@ type UseMouseGradientReturn = [RefCallback<HTMLElement>];
  * --mouse-x-pct: horizontal position as a decimal (0 to 1)
  * --mouse-y-pct: vertical position as a decimal (0 to 1)
  */
-function handleMouseTracking(root: HTMLElement): handleMouseTrackingReturn {
+function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
   // Viewport dimensions
   const width = root.clientWidth;
   const height = root.clientHeight;
