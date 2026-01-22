@@ -1,0 +1,11 @@
+.item:not(:first-child) {
+  margin-block-start: ${em(8)};
+}
+
+.item:not(:last-child) {
+  margin-block-end: ${em(8)};
+}
+
+.item::marker {
+  content: '👉 ';
+}

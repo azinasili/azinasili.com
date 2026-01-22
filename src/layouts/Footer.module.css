@@ -1,0 +1,8 @@
+.footer {
+  font-size: ${em(12)};
+  margin-block-end: 0;
+}
+
+.copyright {
+  margin-block: 0;
+}

@@ -1,15 +1,8 @@
 import type { PropsWithChildren } from 'react';
-import styled from 'styled-components';
+import styles from './Common.module.css';
 
 type CommonProps = PropsWithChildren;
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: minmax(auto, 63ch);
-  grid-template-rows: auto 1fr auto;
-  padding: 2em;
-`;
-
 export function Common({ children }: CommonProps) {
-  return <Wrapper>{children}</Wrapper>
+  return <div className={styles.wrapper}>{children}</div>
 }
