@@ -12,6 +12,8 @@ type UseMouseGradientReturn = [RefCallback<HTMLElement>];
  * --mouse-y: vertical position in pixels
  * --mouse-x-pct: horizontal position as a decimal (0 to 1)
  * --mouse-y-pct: vertical position as a decimal (0 to 1)
+ * --hue1: global theme value
+ * --hue2: global theme value
  */
 function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
   const rect = root.getBoundingClientRect();
@@ -42,38 +44,51 @@ function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
     const hue2 = Math.floor(yPct * 60 + 180);
     // const hue2 = (hue1 + 180) % 360;
 
-    // Update pixel values
-    root.style.setProperty('--mouse-x', `${x.toFixed(2)}px`);
-    root.style.setProperty('--mouse-y', `${y.toFixed(2)}px`);
+    requestAnimationFrame(() => {
+      // Update pixel values
+      root.style.setProperty('--mouse-x', `${x.toFixed(2)}px`);
+      root.style.setProperty('--mouse-y', `${y.toFixed(2)}px`);
 
-    // Update percentage values (useful for transforms or gradients)
-    root.style.setProperty('--mouse-x-pct', xPct.toFixed(3));
-    root.style.setProperty('--mouse-y-pct', yPct.toFixed(3));
+      // Update percentage values (useful for transforms or gradients)
+      root.style.setProperty('--mouse-x-pct', xPct.toFixed(3));
+      root.style.setProperty('--mouse-y-pct', yPct.toFixed(3));
 
-    root.style.setProperty('--hue-1', hue1.toString());
-    root.style.setProperty('--hue-2', hue2.toString());
+      // Update global theme values
+      root.style.setProperty('--hue-1', hue1.toString());
+      root.style.setProperty('--hue-2', hue2.toString());
+    });
   }
 }
 
+/**
+ * Singleton pattern to ensure only one listener is active
+ */
 let isListening = false;
 
+/**
+ * React hook to track mouse movement and update CSS variables.
+ */
 export function useMouseGradient(): UseMouseGradientReturn {
   const [element, setElement] = useState<HTMLElement | null>(null);
+
+  // Callback ref to set the target element
   const ref = useCallback<RefCallback<HTMLElement>>((node) => {
-    if (node !== null && !element) {
+    if (node !== null) {
       setElement(node);
     }
 
     return () => {
       setElement(null)
     }
-  }, [element]);
+  }, []);
 
   useEffect(() => {
+    // Check document context, avoid running on server
     if (typeof window === 'undefined') {
       return;
     }
 
+    // Use the provided element or fallback to document root
     const root = element || document.documentElement;
 
     if (!isListening) {
