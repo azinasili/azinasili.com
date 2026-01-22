@@ -1,0 +1,26 @@
+.gradientText {
+  /**
+   * Map X position to a Hue (0-360)
+   * Map Y position to a different Hue (0-360)
+   * const hue1 = Math.floor(xPct * 360);
+   * const hue2 = Math.floor(yPct * 360);
+   */
+  --hue-1-calc: calc(var(--mouse-x-pct) * 60 + 180);
+  --hue-2-calc: calc(var(--mouse-y-pct) * 60 + 180);
+
+  --hue-1-default: 210;
+  --hue-2-default: 270;
+
+  --hue-1: round(down, var(--hue-1-calc));
+  --hue-2: round(down, var(--hue-2-calc));
+
+  background: linear-gradient(orange, tomato);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--hue-1, var(--hue-1-default)), 70%, 60%),
+    hsl(var(--hue-2, var(--hue-2-default)), 70%, 60%)
+  );
+  background-clip: text;
+  -moz-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
