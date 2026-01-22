@@ -1,5 +1,9 @@
 import { type RefCallback, useCallback, useEffect, useState } from 'react';
 
+type handleMouseTrackingReturn = (event: MouseEvent) => void;
+
+type UseMouseGradientReturn = [RefCallback<HTMLElement>];
+
 /**
  * Updates CSS variables based on mouse position.
  * --mouse-x: horizontal position in pixels
@@ -7,12 +11,12 @@ import { type RefCallback, useCallback, useEffect, useState } from 'react';
  * --mouse-x-pct: horizontal position as a decimal (0 to 1)
  * --mouse-y-pct: vertical position as a decimal (0 to 1)
  */
-function handleMouseTracking(root: HTMLElement) {
+function handleMouseTracking(root: HTMLElement): handleMouseTrackingReturn {
   // Viewport dimensions
   const width = root.clientWidth;
   const height = root.clientHeight;
 
-  return function eventHandler(event: MouseEvent) {
+  return function eventHandler(event) {
     // Current mouse coordinates
     const x = event.clientX;
     const y = event.clientY;
@@ -41,7 +45,7 @@ function handleMouseTracking(root: HTMLElement) {
 
 let isListening = false;
 
-export function useMouseGradient() {
+export function useMouseGradient(): UseMouseGradientReturn {
   const [element, setElement] = useState<HTMLElement | null>(null);
   const ref = useCallback<RefCallback<HTMLElement>>((node) => {
     if (node !== null) {
