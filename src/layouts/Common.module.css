@@ -1,0 +1,6 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(auto, 63ch);
+  grid-template-rows: auto 1fr auto;
+  padding: 2em;
+}

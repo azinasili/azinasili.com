@@ -1,10 +1,5 @@
-import styled from 'styled-components';
-
-const StyledChip = styled.div`
-  background-color: red;
-  position: relative;
-`;
+import styles from './Chip.module.css';
 
 export function Chip() {
-  return <StyledChip>a chip</StyledChip>;
+  return <span className={styles.chip}>a chip</span>;
 }
