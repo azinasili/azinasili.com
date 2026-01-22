@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-import { memo } from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
 import type { ProfileLink } from 'types/Profile';
@@ -18,7 +16,7 @@ const Name = styled.span`
   display: inline-block;
 `;
 
-const ProfileLinkItem: FC<ProfileLink> = ({ iconPath, title, url }) => {
+export function ProfileLinkItem({ iconPath, title, url }: ProfileLink) {
   return (
     <PointerList.Item>
       <a href={url} rel="noreferrer noopener">
@@ -32,6 +30,4 @@ const ProfileLinkItem: FC<ProfileLink> = ({ iconPath, title, url }) => {
       </a>
     </PointerList.Item>
   );
-};
-
-export default memo(ProfileLinkItem);
+}

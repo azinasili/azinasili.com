@@ -1,12 +1,10 @@
-import type { FC, HTMLAttributes, ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, FC, PropsWithChildren } from 'react';
 import styled from 'styled-components';
 import { em } from 'polished';
 
-interface WithChildrenProp {
-  children: ReactNode;
-}
+type WithChildrenProp = PropsWithChildren<unknown>;
 
-type PointerListItemProps = WithChildrenProp & HTMLAttributes<HTMLLIElement>;
+type PointerListItemProps = WithChildrenProp & ComponentPropsWithoutRef<'li'>;
 
 const Item = styled.li`
   &:not(:first-child) {
@@ -22,18 +20,16 @@ const Item = styled.li`
   }
 `;
 
-const PointerListItem: FC<PointerListItemProps> = ({ children, ...props }) => {
+function PointerListItem({ children, ...props }: PointerListItemProps) {
   return <Item {...props}>{children}</Item>
-};
+}
 
-type PointerListProps = FC<WithChildrenProp & HTMLAttributes<HTMLUListElement>> & {
+type PointerListProps = FC<WithChildrenProp & ComponentPropsWithoutRef<'ul'>> & {
   Item: typeof PointerListItem;
 };
 
-const PointerList: PointerListProps = ({ children, ...props }) => {
+export const PointerList: PointerListProps = ({ children, ...props }) => {
   return <ul {...props}>{children}</ul>
 };
 
 PointerList.Item = PointerListItem;
-
-export default PointerList;

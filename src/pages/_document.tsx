@@ -34,7 +34,7 @@ export default class AzinAsiliDocument extends Document {
     }
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <Html lang="en">
         <Head>
