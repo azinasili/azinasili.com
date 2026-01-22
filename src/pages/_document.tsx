@@ -4,7 +4,7 @@ import Document, {
   Main,
   NextScript,
 } from 'next/document';
-import 'styles/globals.css';
+
 export default class AzinAsiliDocument extends Document {
   render() {
     return (
