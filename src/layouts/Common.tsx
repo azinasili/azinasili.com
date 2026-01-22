@@ -1,8 +1,5 @@
+import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
-
-interface CommonProps {
-  children: React.ReactNode;
-}
 
 const Wrapper = styled.div`
   display: grid;
@@ -11,6 +8,6 @@ const Wrapper = styled.div`
   padding: 2em;
 `;
 
-export function Common({ children }: CommonProps) {
+export function Common({ children }: PropsWithChildren) {
   return <Wrapper>{children}</Wrapper>
 }

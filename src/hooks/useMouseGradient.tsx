@@ -1,4 +1,4 @@
-import { type RefCallback, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type RefCallback } from 'react';
 
 type TrackingEvent = MouseEvent | TouchEvent;
 
