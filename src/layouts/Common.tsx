@@ -1,8 +1,7 @@
+import type { PropsWithChildren } from 'react';
 import styled from 'styled-components';
 
-interface CommonProps {
-  children: React.ReactNode;
-}
+type CommonProps = PropsWithChildren;
 
 const Wrapper = styled.div`
   display: grid;

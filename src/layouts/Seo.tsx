@@ -1,11 +1,12 @@
-import React, { type ReactNode } from 'react';
+import React, { type PropsWithChildren } from 'react';
 import NextHead from 'next/head';
 
-interface SeoProps {
+interface BaseSeoProps {
   title: string;
   description: string;
-  children: ReactNode;
 }
+
+type SeoProps = PropsWithChildren<BaseSeoProps>;
 
 export function Seo({
   title,
