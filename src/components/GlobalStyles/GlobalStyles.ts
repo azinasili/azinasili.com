@@ -28,6 +28,9 @@ export const GlobalStyles = createGlobalStyle`
     --heading-margin-bottom: 1.05rem;
     --heading-margin-top: 2.75rem;
     --paragraph-margin-bottom: 1.15rem;
+
+    --hue-1: 210;
+    --hue-2: 270;
   }
 
   :root {
