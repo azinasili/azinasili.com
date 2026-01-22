@@ -39,6 +39,8 @@ function handleMouseTracking(root: HTMLElement) {
   }
 }
 
+let isListening = false;
+
 export function useMouseGradient() {
   const [element, setElement] = useState<HTMLElement | null>(null);
   const ref = useCallback<RefCallback<HTMLElement>>((node) => {
@@ -58,10 +60,14 @@ export function useMouseGradient() {
 
     const root = element || document.documentElement;
 
-    window.addEventListener('mousemove', handleMouseTracking(root));
+    if (!isListening) {
+      window.addEventListener('mousemove', handleMouseTracking(root));
+      isListening = true;
+    }
 
     return () => {
       window.removeEventListener('mousemove', handleMouseTracking(root));
+      isListening = false;
     }
   }, [element]);
 
