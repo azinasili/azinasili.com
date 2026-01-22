@@ -26,16 +26,6 @@
   --paragraph-margin-bottom: 1.15rem;
 }
 
-:root {
-  box-sizing: border-box;
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-}
-
 /**
   * This element wraps each page. It's being utilized to create the layout
   * of a background img/color spanning the entire page.

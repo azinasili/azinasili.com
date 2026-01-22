@@ -1,7 +1,6 @@
-import React from 'react';
 import type { AppProps } from 'next/app';
-import { GlobalStyles } from 'components/GlobalStyles';
 import { useMouseGradient } from 'hooks/useMouseGradient';
+import 'styles/global.css';
 import 'styles/App.css';
 
 export default function AzinAsiliApp({
@@ -9,10 +8,5 @@ export default function AzinAsiliApp({
   pageProps,
 }: AppProps) {
   useMouseGradient();
-  return (
-    <React.Fragment>
-      <GlobalStyles />
-      <Component {...pageProps} />
-    </React.Fragment>
-  );
+  return <Component {...pageProps} />;
 }
