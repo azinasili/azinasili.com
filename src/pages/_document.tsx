@@ -1,10 +1,9 @@
+import type { DocumentContext, DocumentInitialProps } from 'next/document';
 import Document, {
   Html,
   Head,
   Main,
   NextScript,
-  type DocumentContext,
-  type DocumentInitialProps
 } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 

@@ -1,5 +1,7 @@
 import type { PropsWithChildren } from 'react';
 
-export function ExperienceGroup({ children }: PropsWithChildren) {
+type ExperienceGroupProps = PropsWithChildren<unknown>;
+
+export function ExperienceGroup({ children }: ExperienceGroupProps) {
   return <div>{children}</div>;
 }

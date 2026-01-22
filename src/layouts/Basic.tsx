@@ -1,4 +1,4 @@
-import type { PropsWithChildren, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Common } from './Common';
 import { Footer } from './Footer';
 import { Seo } from './Seo';
@@ -7,6 +7,7 @@ interface BasicProps {
   title: string;
   description: string;
   headerSlot: ReactNode;
+  children: ReactNode;
 }
 
 export function Basic({
@@ -14,7 +15,7 @@ export function Basic({
   description,
   headerSlot,
   title,
-}: PropsWithChildren<BasicProps>) {
+}: BasicProps) {
   return (
     <Seo title={title} description={description}>
       <Common>

@@ -1,16 +1,17 @@
-import React, { type PropsWithChildren } from 'react';
+import React, { type ReactNode } from 'react';
 import NextHead from 'next/head';
 
 interface SeoProps {
   title: string;
   description: string;
+  children: ReactNode;
 }
 
 export function Seo({
   title,
   description,
   children,
-}: PropsWithChildren<SeoProps>) {
+}: SeoProps) {
   return (
     <React.Fragment>
       <NextHead>
