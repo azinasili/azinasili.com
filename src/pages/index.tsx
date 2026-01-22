@@ -14,7 +14,8 @@ interface HomePageProps {
 }
 
 export const getServerSideProps = (async () => {
-  const [profileLinks, projects] = await Promise.all([getProfileLinks(), getProjects()]);
+  const profileLinks = await getProfileLinks();
+  const projects = await getProjects();
   return {
     props: { profileLinks, projects },
   };
