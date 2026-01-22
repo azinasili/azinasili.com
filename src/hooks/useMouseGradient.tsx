@@ -12,8 +12,6 @@ type UseMouseGradientReturn = [RefCallback<HTMLElement>];
  * --mouse-y: vertical position in pixels
  * --mouse-x-pct: horizontal position as a decimal (0 to 1)
  * --mouse-y-pct: vertical position as a decimal (0 to 1)
- * --hue1: global theme value
- * --hue2: global theme value
  */
 function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
   const rect = root.getBoundingClientRect();
@@ -39,9 +37,9 @@ function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
     // Map X position to a Hue (0-360)
     // Map Y position to a different Hue (0-360)
     // const hue1 = Math.floor(xPct * 360);
-    const hue1 = Math.floor(xPct * 60 + 180);
+    // const hue1 = Math.floor(xPct * 60 + 180);
     // const hue2 = Math.floor(yPct * 360);
-    const hue2 = Math.floor(yPct * 60 + 180);
+    // const hue2 = Math.floor(yPct * 60 + 180);
     // const hue2 = (hue1 + 180) % 360;
 
     requestAnimationFrame(() => {
@@ -52,10 +50,6 @@ function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
       // Update percentage values (useful for transforms or gradients)
       root.style.setProperty('--mouse-x-pct', xPct.toFixed(3));
       root.style.setProperty('--mouse-y-pct', yPct.toFixed(3));
-
-      // Update global theme values
-      root.style.setProperty('--hue-1', hue1.toString());
-      root.style.setProperty('--hue-2', hue2.toString());
     });
   }
 }
