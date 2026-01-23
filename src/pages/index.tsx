@@ -24,9 +24,8 @@ export default function Home({ profileLinks, projects }: InferGetServerSideProps
     <Basic title="Azin" description="Welcome to my small corner of the web" headerSlot={<h1>👋 Hi</h1>}>
       <p>
         I&apos;m a software engineer with a passion for the web. I can help you create beautiful and accessible
-        experiences.
+        experiences. Currently I am leading a team of engineers @ FedEx Dataworks.
       </p>
-      <p>Currently I am leading a team of engineers @ FedEx Dataworks.</p>
       <h2>🔎 Find me</h2>
       <ProfileLinks profileLinks={profileLinks} />
       <h2>🚧 Some Projects</h2>
