@@ -7,10 +7,22 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "dev": "next dev",
+    "eslint": "eslint .",
+    "eslint:fix": "npm run eslint --fix",
+    "eslint:fix-file": "npm run eslint:fix --file",
+    "eslint:staged": "eslint --fix",
+    "format": "npm run prettier:fix && npm run eslint:fix",
+    "format:check": "npm run prettier && npm run eslint",
     "lint": "eslint",
+    "precommit": "lint-staged",
+    "prepare": "husky",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "prettier:fix-file": "prettier --write",
+    "prettier:staged": "npm run prettier:fix-file",
+    "start": "next start",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
@@ -25,6 +37,10 @@
     "@types/react-dom": "19.2.3",
     "eslint": "9.39.2",
     "eslint-config-next": "16.1.1",
+    "eslint-config-prettier": "10.1.8",
+    "husky": "9.1.7",
+    "lint-staged": "16.2.7",
+    "prettier": "3.8.1",
     "typescript": "5.9.3",
     "typescript-eslint": "8.52.0"
   }

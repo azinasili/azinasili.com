@@ -4,5 +4,5 @@ import styles from './Common.module.css';
 type CommonProps = PropsWithChildren;
 
 export function Common({ children }: CommonProps) {
-  return <div className={styles.wrapper}>{children}</div>
+  return <div className={styles.wrapper}>{children}</div>;
 }

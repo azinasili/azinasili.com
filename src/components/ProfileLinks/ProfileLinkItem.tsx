@@ -6,13 +6,7 @@ export function ProfileLinkItem({ iconPath, title, url }: ProfileLink) {
   return (
     <PointerList.Item>
       <a href={url} rel="noreferrer noopener">
-        <img
-          alt={title}
-          className={styles.img}
-          height={16}
-          src={`/socialmedia/${iconPath}`}
-          width={16}
-        />
+        <img alt={title} className={styles.img} height={16} src={`/socialmedia/${iconPath}`} width={16} />
         <span className={styles.name}>{title}</span>
       </a>
     </PointerList.Item>

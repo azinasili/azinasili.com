@@ -11,12 +11,7 @@ interface BaseBasicProps {
 
 type BasicProps = PropsWithChildren<BaseBasicProps>;
 
-export function Basic({
-  children,
-  description,
-  headerSlot,
-  title,
-}: BasicProps) {
+export function Basic({ children, description, headerSlot, title }: BasicProps) {
   return (
     <Seo title={title} description={description}>
       <Common>

@@ -10,7 +10,9 @@ interface ExperienceProps {
 export function Experience({ institution, description, endYear, startYear }: ExperienceProps) {
   return (
     <React.Fragment>
-      <p>{startYear} - {endYear}</p>
+      <p>
+        {startYear} - {endYear}
+      </p>
       <h3>{institution}</h3>
       <p>{description}</p>
     </React.Fragment>

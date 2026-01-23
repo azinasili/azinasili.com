@@ -1,4 +1,4 @@
-import { BasePointerList} from './BasePointerList';
+import { BasePointerList } from './BasePointerList';
 import { PointerListItem } from './PointerListItem';
 
 type PointerListProps = typeof BasePointerList & {
