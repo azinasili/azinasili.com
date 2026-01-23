@@ -8,11 +8,7 @@ interface BaseSeoProps {
 
 type SeoProps = PropsWithChildren<BaseSeoProps>;
 
-export function Seo({
-  title,
-  description,
-  children,
-}: SeoProps) {
+export function Seo({ title, description, children }: SeoProps) {
   return (
     <React.Fragment>
       <NextHead>

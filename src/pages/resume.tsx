@@ -29,50 +29,15 @@ export default function ResumePage() {
       </ul>
       <h2>Experience</h2>
       <ExperienceGroup>
-        <Experience
-          description="..."
-          endYear="Present"
-          institution="ShopRunner"
-          startYear="2017"
-        />
-        <Experience
-          description="..."
-          endYear="Present"
-          institution="ShopRunner"
-          startYear="2017"
-        />
-        <Experience
-          description="..."
-          endYear="Present"
-          institution="ShopRunner"
-          startYear="2017"
-        />
+        <Experience description="..." endYear="Present" institution="ShopRunner" startYear="2017" />
+        <Experience description="..." endYear="Present" institution="ShopRunner" startYear="2017" />
+        <Experience description="..." endYear="Present" institution="ShopRunner" startYear="2017" />
       </ExperienceGroup>
-      <Experience
-        description="..."
-        endYear="2017"
-        institution="Graphite GTC"
-        startYear="2013"
-      />
-      <Experience
-        description="..."
-        endYear="2013"
-        institution="GSW"
-        startYear="2013"
-      />
-      <Experience
-        description="..."
-        endYear="2013"
-        institution="AG Marketing Company"
-        startYear="2011"
-      />
+      <Experience description="..." endYear="2017" institution="Graphite GTC" startYear="2013" />
+      <Experience description="..." endYear="2013" institution="GSW" startYear="2013" />
+      <Experience description="..." endYear="2013" institution="AG Marketing Company" startYear="2011" />
       <h2>Education</h2>
-      <Experience
-        description="..."
-        endYear="2011"
-        institution="Drexel University"
-        startYear="2007"
-      />
+      <Experience description="..." endYear="2011" institution="Drexel University" startYear="2007" />
     </section>
   );
 }

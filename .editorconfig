@@ -1,11 +1,10 @@
-# top-most EditorConfig file
 root = true
 
-# All files adhere to the following settings
-# Settings can be overwritten per file extenstion
 [*]
-indent_style = space
-indent_size = 2
 charset = utf-8
 end_of_line = lf
+indent_size = 2
+indent_style = space
 insert_final_newline = true
+max_line_length = 120
+trim_trailing_whitespace = true

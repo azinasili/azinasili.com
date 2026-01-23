@@ -1,9 +1,9 @@
 .item:not(:first-child) {
-  margin-block-start: .5em;
+  margin-block-start: 0.5em;
 }
 
 .item:not(:last-child) {
-  margin-block-end: .5em;
+  margin-block-end: 0.5em;
 }
 
 .item::marker {

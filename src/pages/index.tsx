@@ -1,4 +1,4 @@
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import type { Project } from 'types/Project';
 import type { ProfileLink } from 'types/Profile';
 import { getProjects } from 'server/getProjects';
@@ -13,20 +13,18 @@ interface HomePageProps {
 }
 
 export const getServerSideProps = (async () => {
-  const [profileLinks, projects] = await Promise.all([
-    getProfileLinks(),
-    getProjects(),
-  ]);
+  const [profileLinks, projects] = await Promise.all([getProfileLinks(), getProjects()]);
   return {
     props: { profileLinks, projects },
   };
-}) satisfies GetServerSideProps<HomePageProps>
+}) satisfies GetServerSideProps<HomePageProps>;
 
 export default function Home({ profileLinks, projects }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <Basic title="Azin" description="Welcome to my small corner of the web" headerSlot={<h1>👋 Hi</h1>}>
       <p>
-        I&apos;m a software engineer with a passion for building for the web. I rely on my design background to create beautiful and accessible experiences. Currently I am leading a team of engineers @ FedEx Dataworks.
+        I&apos;m a software engineer with a passion for the web. I can help you create beautiful and accessible
+        experiences. Currently I am leading a team of engineers @ FedEx Dataworks.
       </p>
       <h2>🔎 Find me</h2>
       <ProfileLinks profileLinks={profileLinks} />
