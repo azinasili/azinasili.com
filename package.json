@@ -23,7 +23,7 @@
     "prettier:fix-file": "prettier --write",
     "prettier:staged": "npm run prettier:fix-file",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --build"
   },
   "dependencies": {
     "modern-normalize": "3.0.1",
