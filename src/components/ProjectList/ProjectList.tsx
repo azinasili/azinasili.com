@@ -7,5 +7,11 @@ interface ProjectListProps {
 }
 
 export function ProjectList({ projects }: ProjectListProps) {
-  return <PointerList>{projects.map(project => <ProjectListItem {...project} key={project.id} />)}</PointerList>;
+  return (
+    <PointerList>
+      {projects.map(project => (
+        <ProjectListItem {...project} key={project.id} />
+      ))}
+    </PointerList>
+  );
 }

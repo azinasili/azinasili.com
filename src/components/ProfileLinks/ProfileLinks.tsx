@@ -8,6 +8,10 @@ interface ProfileLinksProps {
 
 export function ProfileLinks({ profileLinks }: ProfileLinksProps) {
   return (
-    <PointerList>{profileLinks.map(profileLink => <ProfileLinkItem {...profileLink} key={profileLink.id} />)}</PointerList>
+    <PointerList>
+      {profileLinks.map(profileLink => (
+        <ProfileLinkItem {...profileLink} key={profileLink.id} />
+      ))}
+    </PointerList>
   );
 }
