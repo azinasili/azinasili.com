@@ -51,7 +51,7 @@ function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
       root.style.setProperty('--mouse-x-pct', xPct.toFixed(3));
       root.style.setProperty('--mouse-y-pct', yPct.toFixed(3));
     });
-  }
+  };
 }
 
 /**
@@ -66,14 +66,14 @@ export function useMouseGradient(): UseMouseGradientReturn {
   const [element, setElement] = useState<HTMLElement | null>(null);
 
   // Callback ref to set the target element
-  const ref = useCallback<RefCallback<HTMLElement>>((node) => {
+  const ref = useCallback<RefCallback<HTMLElement>>(node => {
     if (node !== null) {
       setElement(node);
     }
 
     return () => {
-      setElement(null)
-    }
+      setElement(null);
+    };
   }, []);
 
   useEffect(() => {
@@ -95,7 +95,7 @@ export function useMouseGradient(): UseMouseGradientReturn {
       window.removeEventListener('mousemove', handleMouseTracking(root));
       window.removeEventListener('touchmove', handleMouseTracking(root));
       isListening = false;
-    }
+    };
   }, [element]);
 
   return [ref];
