@@ -7,14 +7,17 @@
    */
   --hue-1-calc: calc(var(--mouse-x-pct) * 60 + 180);
   --hue-2-calc: calc(var(--mouse-y-pct) * 60 + 180);
+  /* --hue-1-calc: calc(var(--mouse-x-pct) * 360); */
+  /* --hue-2-calc: calc(var(--mouse-y-pct) * 360); */
 
   --hue-1-default: 210;
   --hue-2-default: 270;
 
   --hue-1: round(down, var(--hue-1-calc));
   --hue-2: round(down, var(--hue-2-calc));
+  /* --hue-1: round(down, var(--hue-1-calc)); */
+  /* --hue-2: round(down, var(--hue-2-calc)); */
 
-  background: linear-gradient(orange, tomato);
   background: linear-gradient(
     135deg,
     hsl(var(--hue-1, var(--hue-1-default)), 70%, 60%),

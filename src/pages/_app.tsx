@@ -1,9 +1,9 @@
 import type { AppProps } from 'next/app';
-import { useMouseGradient } from 'hooks/useMouseGradient';
+import { useMouseTracking } from 'hooks/useMouseTracking';
 import 'styles/global.css';
 import 'styles/App.css';
 
 export default function AzinAsiliApp({ Component, pageProps }: AppProps) {
-  useMouseGradient();
+  useMouseTracking();
   return <Component {...pageProps} />;
 }
