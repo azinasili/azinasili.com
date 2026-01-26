@@ -52,7 +52,7 @@ h6,
 .h3,
 .h4,
 .h5,
-.h6  {
+.h6 {
   font-weight: var(--heading-font-weight);
   line-height: var(--heading-line-height);
   margin-block-end: var(--heading-margin-block-end);
