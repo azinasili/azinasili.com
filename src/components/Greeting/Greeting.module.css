@@ -3,23 +3,26 @@
    * Map X position to a Hue (0-360)
    * Map Y position to a different Hue (0-360)
    */
+
   /* --hue-1-calc: calc(var(--mouse-x-pct) * 360); */
+
   /* --hue-2-calc: calc(var(--mouse-y-pct) * 360);    */
   --hue-1-calc: calc(var(--mouse-x-pct) * 60 + 300);
   --hue-2-calc: calc(var(--mouse-y-pct) * 60 + 260);
+
   /* --hue-1-calc: (hue1 + 180) % 360; */
+
   /* --hue-2-calc: (hue2 + 180) % 360; */
 
   --hue-1-default: 300;
   --hue-2-default: 260;
-
   --hue-1: round(down, var(--hue-1-calc));
   --hue-2: round(down, var(--hue-2-calc));
 
   background: linear-gradient(
     var(--angle, 135deg),
-    hsl(var(--hue-1, var(--hue-1-default)), 70%, 60%),
-    hsl(var(--hue-2, var(--hue-2-default)), 70%, 60%)
+    hsl(var(--hue-1, var(--hue-1-default)) 70% 60%),
+    hsl(var(--hue-2, var(--hue-2-default)) 70% 60%)
   );
   background-clip: text;
   -moz-text-fill-color: transparent;
