@@ -1,4 +1,5 @@
 .wrapper {
+  block-size: 100dvh;
   display: grid;
   grid-template-columns: minmax(auto, 63ch);
   grid-template-rows: auto 1fr auto;

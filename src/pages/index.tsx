@@ -4,6 +4,7 @@ import type { ProfileLink } from 'types/Profile';
 import { getProjects } from 'server/getProjects';
 import { getProfileLinks } from 'server/getProfileLinks';
 import { Basic } from 'layouts/Basic';
+import { Greeting } from 'components/Greeting';
 import { ProfileLinks } from 'components/ProfileLinks';
 import { ProjectList } from 'components/ProjectList';
 
@@ -21,14 +22,14 @@ export const getServerSideProps = (async () => {
 
 export default function Home({ profileLinks, projects }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
-    <Basic title="Azin" description="Welcome to my small corner of the web" headerSlot={<h1>👋 Hi</h1>}>
+    <Basic title="Azin" description="Welcome to my small corner of the web" headerSlot={<Greeting />}>
       <p>
         I&apos;m a software engineer with a passion for the web. I can help you create beautiful and accessible
         experiences. Currently I am leading a team of engineers @ FedEx Dataworks.
       </p>
-      <h2>🔎 Find me</h2>
+      <h2 className="h6">🔎 Find me</h2>
       <ProfileLinks profileLinks={profileLinks} />
-      <h2>🚧 Some Projects</h2>
+      <h2 className="h6">🚧 Some Projects</h2>
       <ProjectList projects={projects} />
     </Basic>
   );

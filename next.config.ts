@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   compiler: {
     reactRemoveProperties: true,
     removeConsole: process.env.NODE_ENV === 'production',
-    styledComponents: true,
   },
   reactStrictMode: true,
   ...(process.env.NODE_ENV === 'production' && {
