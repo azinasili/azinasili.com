@@ -29,20 +29,34 @@ function handleMouseTracking(root: HTMLElement): HandleMouseTrackingReturn {
       point = event;
     }
 
+    const width = rect.width;
+    const height = rect.height;
+    const clientX = point.clientX;
+    const clientY = point.clientY;
+
     // Current mouse coordinates
-    const x = point.clientX - rect.left;
-    const y = point.clientX - rect.top;
-    const xPct = Math.max(0, Math.min(1, x / rect.width));
-    const yPct = Math.max(0, Math.min(1, y / rect.height));
-    // Map X position to a Hue (0-360)
-    // Map Y position to a different Hue (0-360)
-    // const hue1 = Math.floor(xPct * 360);
-    // const hue1 = Math.floor(xPct * 60 + 180);
-    // const hue2 = Math.floor(yPct * 360);
-    // const hue2 = Math.floor(yPct * 60 + 180);
-    // const hue2 = (hue1 + 180) % 360;
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    const xPct = Math.max(0, Math.min(1, x / width));
+    const yPct = Math.max(0, Math.min(1, y / height));
+
+    // Get the center of the viewport
+    const centerX = width / 2;
+    const centerY = height / 2;
+
+    // Calculate the distance from center to mouse
+    const deltaX = clientX - centerX;
+    const deltaY = clientY - centerY;
+
+    // Calculate the angle in radians and convert to degrees
+    // We add 90 because CSS gradients start at the top (12 o'clock)
+    const radians = Math.atan2(deltaY, deltaX);
+    const degrees = radians * (180 / Math.PI) + 90;
 
     requestAnimationFrame(() => {
+      // Update angle of mouse
+      root.style.setProperty('--angle', `${degrees}deg`);
+
       // Update pixel values
       root.style.setProperty('--mouse-x', `${x.toFixed(2)}px`);
       root.style.setProperty('--mouse-y', `${y.toFixed(2)}px`);
