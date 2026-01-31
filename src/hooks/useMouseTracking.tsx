@@ -8,6 +8,7 @@ type useMouseTrackingReturn = [RefCallback<HTMLElement>];
 
 /**
  * Updates CSS variables based on mouse position.
+ * --angle: angle position in degrees of the mouse relative to center
  * --mouse-x: horizontal position in pixels
  * --mouse-y: vertical position in pixels
  * --mouse-x-pct: horizontal position as a decimal (0 to 1)
