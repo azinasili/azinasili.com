@@ -1,12 +1,13 @@
 {
   "name": "azinasili.com",
   "description": "Personal website and portfolio",
-  "version": "2.3.1",
+  "version": "2.3.2",
   "authors": "Azin Asili <hello@azinasili.com>",
   "homepage": "http://azinasili.com/",
   "private": true,
   "type": "module",
   "scripts": {
+    "analyze": "npx next experimental-analyze",
     "build": "next build",
     "dev": "next dev",
     "eslint": "eslint .",
