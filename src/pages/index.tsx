@@ -1,4 +1,4 @@
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
+import type { InferGetStaticPropsType, GetStaticPropsResult } from 'next';
 import type { Project } from 'types/Project';
 import type { ProfileLink } from 'types/Profile';
 import { getProjects } from 'server/getProjects';
@@ -13,14 +13,14 @@ interface HomePageProps {
   profileLinks: ProfileLink[];
 }
 
-export const getServerSideProps = (async () => {
+export async function getStaticProps(): Promise<GetStaticPropsResult<HomePageProps>> {
   const [profileLinks, projects] = await Promise.all([getProfileLinks(), getProjects()]);
   return {
     props: { profileLinks, projects },
   };
-}) satisfies GetServerSideProps<HomePageProps>;
+}
 
-export default function Home({ profileLinks, projects }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+export default function Home({ profileLinks, projects }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Basic title="Azin" description="Welcome to my small corner of the web" headerSlot={<Greeting />}>
       <p>
