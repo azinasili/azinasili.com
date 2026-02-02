@@ -1,5 +1,5 @@
-import { Experience } from 'components/Experience';
-import { ExperienceGroup } from 'components/ExperienceGroup';
+import { Experience } from '~/components/Experience';
+import { ExperienceGroup } from '~/components/ExperienceGroup';
 
 export default function ResumePage() {
   return (

@@ -1,5 +1,5 @@
-import type { ProfileLink } from 'types/Profile';
-import { PointerList } from 'components/PointerList';
+import type { ProfileLink } from '~/types/Profile';
+import { PointerList } from '~/components/PointerList';
 import { ProfileLinkItem } from './ProfileLinkItem';
 
 interface ProfileLinksProps {

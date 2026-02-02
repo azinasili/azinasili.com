@@ -1,5 +1,5 @@
-import type { ProfileLink } from 'types/Profile';
-import { PointerList } from 'components/PointerList';
+import type { ProfileLink } from '~/types/Profile';
+import { PointerList } from '~/components/PointerList';
 import styles from './ProfileLinkItem.module.css';
 
 export function ProfileLinkItem({ iconPath, title, url }: ProfileLink) {

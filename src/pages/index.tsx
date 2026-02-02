@@ -1,12 +1,12 @@
 import type { InferGetStaticPropsType, GetStaticPropsResult } from 'next';
-import type { Project } from 'types/Project';
-import type { ProfileLink } from 'types/Profile';
-import { getProjects } from 'server/getProjects';
-import { getProfileLinks } from 'server/getProfileLinks';
-import { Basic } from 'layouts/Basic';
-import { Greeting } from 'components/Greeting';
-import { ProfileLinks } from 'components/ProfileLinks';
-import { ProjectList } from 'components/ProjectList';
+import type { Project } from '~/types/Project';
+import type { ProfileLink } from '~/types/Profile';
+import { getProjects } from '~/server/getProjects';
+import { getProfileLinks } from '~/server/getProfileLinks';
+import { Basic } from '~/layouts/Basic';
+import { Greeting } from '~/components/Greeting';
+import { ProfileLinks } from '~/components/ProfileLinks';
+import { ProjectList } from '~/components/ProjectList';
 
 interface HomePageProps {
   projects: Project[];
