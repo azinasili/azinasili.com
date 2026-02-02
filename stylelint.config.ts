@@ -1,6 +1,7 @@
 import type { Config } from 'stylelint';
 
 export default {
+  ignoreFiles: ['.next/**', 'out/**', 'build/**'],
   extends: ['stylelint-config-standard', 'stylelint-prettier/recommended'],
   rules: {
     'selector-class-pattern': [

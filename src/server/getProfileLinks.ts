@@ -1,4 +1,4 @@
-import type { ProfileLink } from 'types/Profile';
+import type { ProfileLink } from '~/types/Profile';
 
 export async function getProfileLinks(): Promise<ProfileLink[]> {
   return [

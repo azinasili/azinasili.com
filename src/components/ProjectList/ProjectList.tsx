@@ -1,5 +1,5 @@
-import type { Project } from 'types/Project';
-import { PointerList } from 'components/PointerList';
+import type { Project } from '~/types/Project';
+import { PointerList } from '~/components/PointerList';
 import { ProjectListItem } from './ProjectListItem';
 
 interface ProjectListProps {
