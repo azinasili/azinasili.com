@@ -11,7 +11,7 @@
     "build": "next build",
     "dev": "next dev",
     "eslint:_base": "npx --node-options=\"--experimental-strip-types\" eslint --flag unstable_native_nodejs_ts_config",
-    "eslint": "npm run eslint:base -- .",
+    "eslint": "npm run eslint:_base -- .",
     "eslint:fix": "npm run eslint -- --fix",
     "eslint:fix-file": "npm run eslint:fix -- --file",
     "eslint:staged": "npm run eslint:_base -- --fix",
