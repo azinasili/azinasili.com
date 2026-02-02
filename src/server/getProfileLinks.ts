@@ -6,21 +6,24 @@ export async function getProfileLinks(): Promise<ProfileLink[]> {
       title: 'Github',
       name: 'github',
       url: 'https://github.com/azinasili',
-      iconPath: 'icon_github.svg',
       id: 1,
     },
     {
       title: 'Codepen',
       name: 'codepen',
       url: 'https://codepen.io/azinasili/',
-      iconPath: 'icon_codepen.svg',
       id: 2,
+    },
+    {
+      title: 'Medium',
+      name: 'codepen',
+      url: 'https://medium.com/@azinasili',
+      id: 3,
     },
     {
       title: 'Contact',
       name: 'gmail',
       url: 'mailto:hello@azinasili.com',
-      iconPath: 'icon_email.svg',
       id: 5,
     },
   ];
