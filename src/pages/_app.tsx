@@ -4,7 +4,7 @@ import 'modern-normalize/modern-normalize.css';
 import '~/styles/global.css';
 import '~/styles/App.css';
 
-export default function AzinAsiliApp({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   useMouseTracking();
   return <Component {...pageProps} />;
 }
