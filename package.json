@@ -1,7 +1,7 @@
 {
   "name": "azinasili.com",
   "description": "Personal website and portfolio",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "authors": "Azin Asili <hello@azinasili.com>",
   "homepage": "http://azinasili.com/",
   "private": true,
@@ -16,7 +16,7 @@
     "eslint:staged": "eslint --fix",
     "format": "npm run prettier:fix && npm run eslint:fix && npm run stylelint:fix",
     "format:check": "npm run prettier && npm run eslint && npm run stylelint",
-    "lint": "eslint",
+    "prebuild": "npm run format:check",
     "precommit": "lint-staged",
     "prepare": "husky",
     "prettier": "prettier --check .",
@@ -30,6 +30,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "lucide-react": "0.563.0",
     "modern-normalize": "3.0.1",
     "next": "16.1.6",
     "react": "19.2.4",
@@ -39,6 +40,7 @@
     "@types/node": "25.1.0",
     "@types/react": "19.2.10",
     "@types/react-dom": "19.2.3",
+    "babel-plugin-react-compiler": "1.0.0",
     "eslint": "9.39.2",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "10.1.8",
