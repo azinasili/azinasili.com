@@ -1,8 +1,8 @@
-export const enum Environment {
-  Production = 'production',
-  Development = 'development',
-  Test = 'test',
-}
+export const Environment = {
+  Production: 'production',
+  Development: 'development',
+  Test: 'test',
+} as const;
 
 export const isProduction = process.env.NODE_ENV === Environment.Production;
 export const isDevelopment = process.env.NODE_ENV === Environment.Development;
