@@ -1,5 +1,5 @@
 import type { ComponentPropsWithRef } from 'react';
-import styles from './PointerListItem.module.css';
+import styles from './PointerList.module.css';
 
 type PointerListItemProps = ComponentPropsWithRef<'li'>;
 
