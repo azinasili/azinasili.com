@@ -4,7 +4,7 @@
  * allowing users to override `font-size` with their browser settings.
  */
 :root {
-  --app-primary-font-family: 'Azeret Mono', monospace;
+  --app-primary-font-family: var(--azeret-mono, 'Azeret Mono');
   --app-background-color: hsl(0deg 0 100 / 100%);
   --app-font-weight: 400;
   --app-line-height: 1.65;
@@ -25,17 +25,14 @@
   --paragraph-margin-block-end: 1.15rem;
 }
 
-.azeret-mono {
-  font-family: var(--app-primary-font-family);
-  font-optical-sizing: auto;
-  font-weight: var(--app-font-weight);
-  font-style: normal;
-}
-
 body {
   background-color: var(--app-background-color);
   color: var(--app-text-color);
+  font-family: var(--app-primary-font-family);
+  font-optical-sizing: auto;
   font-size: var(--app-font-scaler);
+  font-style: normal;
+  font-weight: var(--app-font-weight);
   line-height: var(--app-line-height);
 }
 
