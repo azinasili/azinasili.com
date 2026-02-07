@@ -30,6 +30,7 @@
     "stylelint:fix": "npm run stylelint -- --fix",
     "stylelint:staged": "npm run stylelint:fix",
     "test": "vitest run",
+    "test:ui": "BROWSER_VIEWIER=true vitest watch",
     "test:watch": "vitest watch",
     "type-check": "tsc --noEmit"
   },

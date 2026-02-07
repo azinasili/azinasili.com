@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 import { playwright } from '@vitest/browser-playwright';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
+const isHeadless = process.env.BROWSER_VIEWIER !== 'true';
+
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
@@ -10,7 +12,7 @@ export default defineConfig({
     browser: {
       enabled: true,
       provider: playwright(),
-      headless: true,
+      headless: isHeadless,
       instances: [
         {
           browser: 'chromium',
