@@ -24,6 +24,13 @@ describe('ProjectList', () => {
       expect(item).toBeInTheDocument();
       const styles = window.getComputedStyle(item, '::marker');
       expect(styles.content).toContain('👉');
+    });
+  });
+
+  it('renders an anchor for each listitem', () => {
+    render(<TestProjectList />);
+    const items = screen.getAllByRole('listitem');
+    items.forEach(item => {
       const link = within(item).getByRole('link', { name: 'foo' });
       expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute('href', 'https://foo.com');
