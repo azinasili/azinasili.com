@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { ProfileLinks } from './ProfileLinks';
 
 const profileLinks = [
@@ -20,8 +20,13 @@ describe('ProfileLinks', () => {
     render(<TestProfileLinks />);
     const items = screen.getAllByRole('listitem');
     items.forEach(item => {
+      expect(item).toBeInTheDocument();
       const styles = window.getComputedStyle(item, '::marker');
       expect(styles.content).toContain('👉');
+      const link = within(item).getByRole('link', { name: 'foo' });
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute('href', 'https://foo.com');
+      expect(link).toHaveAttribute('rel', 'noreferrer noopener');
     });
   });
 });

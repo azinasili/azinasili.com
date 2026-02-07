@@ -5,6 +5,6 @@ import { Greeting } from './Greeting';
 describe('Greeting', () => {
   it('renders greeting', () => {
     render(<Greeting />);
-    expect(screen.getByRole('heading', { level: 1, name: /hi/i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 1, name: 'Hi' })).toBeInTheDocument();
   });
 });
