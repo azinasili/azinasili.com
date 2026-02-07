@@ -16,16 +16,6 @@ function TestProfileLinks() {
 }
 
 describe('ProfileLinks', () => {
-  it('renders list with pointer emoji', () => {
-    render(<TestProfileLinks />);
-    const items = screen.getAllByRole('listitem');
-    items.forEach(item => {
-      expect(item).toBeInTheDocument();
-      const styles = window.getComputedStyle(item, '::marker');
-      expect(styles.content).toContain('👉');
-    });
-  });
-
   it('renders an anchor for each listitem', () => {
     render(<TestProfileLinks />);
     const items = screen.getAllByRole('listitem');

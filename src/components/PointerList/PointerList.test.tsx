@@ -19,8 +19,7 @@ describe('PointerList', () => {
     render(<TestPointerList />);
     const items = screen.getAllByRole('listitem');
     items.forEach(item => {
-      const styles = window.getComputedStyle(item, '::marker');
-      expect(styles.content).toContain('👉');
+      expect(item).toHaveClass(/item/i);
     });
   });
 

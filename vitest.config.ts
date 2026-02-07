@@ -9,10 +9,10 @@ export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
     css: true,
+    environment: 'jsdom',
     browser: {
-      enabled: true,
+      enabled: !isHeadless,
       provider: playwright(),
-      headless: isHeadless,
       instances: [
         {
           browser: 'chromium',
