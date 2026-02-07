@@ -2,12 +2,14 @@ import { describe, expect, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { PointerList } from './PointerList';
 
+const pointerItems = ['one', 'two', 'three'];
+
 function TestPointerList() {
   return (
     <PointerList>
-      <PointerList.Item>one</PointerList.Item>
-      <PointerList.Item>two</PointerList.Item>
-      <PointerList.Item>three</PointerList.Item>
+      {pointerItems.map(item => (
+        <PointerList.Item key={item}>{item}</PointerList.Item>
+      ))}
     </PointerList>
   );
 }
@@ -19,6 +21,14 @@ describe('PointerList', () => {
     items.forEach(item => {
       const styles = window.getComputedStyle(item, '::marker');
       expect(styles.content).toContain('👉');
+    });
+  });
+
+  it('renders children content', () => {
+    render(<TestPointerList />);
+    const items = screen.getAllByRole('listitem');
+    items.forEach((item, index) => {
+      expect(item.textContent).toStrictEqual(pointerItems[index]);
     });
   });
 });
