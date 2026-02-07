@@ -7,6 +7,7 @@ const projectList = [
     name: 'foo',
     description: 'bar',
     url: 'https://foo.com',
+    highlights: ['one', 'two'],
     id: 123,
   },
 ];
