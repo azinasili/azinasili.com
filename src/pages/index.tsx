@@ -22,7 +22,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<HomePagePro
 
 export default function Home({ profileLinks, projects }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
-    <Basic title="Azin" description="Welcome to my small corner of the web" headerSlot={<Greeting />}>
+    <Basic title="Azin" description="Welcome to my small corner of the web" header={<Greeting />}>
       <p>
         I&apos;m a software engineer with a passion for the web. I can help you create beautiful and accessible
         experiences. Currently I am leading a team of engineers @ FedEx Dataworks.

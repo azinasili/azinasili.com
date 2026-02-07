@@ -6,16 +6,16 @@ import { Seo } from './Seo';
 interface BaseBasicProps {
   title: string;
   description: string;
-  headerSlot: ReactNode;
+  header?: ReactNode;
 }
 
 type BasicProps = PropsWithChildren<BaseBasicProps>;
 
-export function Basic({ children, description, headerSlot, title }: BasicProps) {
+export function Basic({ children, description, header, title }: BasicProps) {
   return (
     <Seo title={title} description={description}>
       <Common>
-        <header>{headerSlot}</header>
+        {header ? <header>{header}</header> : undefined}
         <main>{children}</main>
         <Footer />
       </Common>
