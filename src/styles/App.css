@@ -4,7 +4,7 @@
  * allowing users to override `font-size` with their browser settings.
  */
 :root {
-  --app-primary-font-family: var(--azeret-mono, 'Azeret Mono');
+  --app-primary-font-family: var(--azeret-mono, var(--font-family));
   --app-background-color: hsl(0deg 0 100 / 100%);
   --app-font-weight: 400;
   --app-line-height: 1.65;
