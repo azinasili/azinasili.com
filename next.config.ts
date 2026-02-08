@@ -1,9 +1,10 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  bundlePagesRouterDependencies: true,
+  poweredByHeader: false,
   reactCompiler: true,
   reactStrictMode: true,
-  poweredByHeader: false,
   compiler: {
     reactRemoveProperties: true,
     removeConsole: process.env.NODE_ENV === 'production',
