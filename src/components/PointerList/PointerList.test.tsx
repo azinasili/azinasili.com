@@ -15,7 +15,7 @@ function TestPointerList() {
 }
 
 describe('PointerList', () => {
-  it('renders list with pointer emoji', () => {
+  it('renders list with custom styles', () => {
     render(<TestPointerList />);
     const items = screen.getAllByRole('listitem');
     items.forEach(item => {

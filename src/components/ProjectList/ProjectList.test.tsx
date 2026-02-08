@@ -22,7 +22,6 @@ describe('ProjectList', () => {
     const items = screen.getAllByRole('listitem');
     items.forEach(item => {
       const link = within(item).getByRole('link', { name: 'foo' });
-      expect(link).toBeInTheDocument();
       expect(link).toHaveAttribute('href', 'https://foo.com');
       expect(link).toHaveAttribute('rel', 'noreferrer noopener');
     });
