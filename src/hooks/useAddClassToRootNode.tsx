@@ -15,6 +15,4 @@ export function useAddClassToRootNode(className: string | Array<string>): void {
       classNamesToAdd.forEach(name => document.documentElement.classList.remove(name));
     };
   }, []);
-
-  return;
 }
