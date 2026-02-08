@@ -4,7 +4,7 @@ type TrackingEvent = MouseEvent | TouchEvent;
 
 type HandleMouseTrackingReturn = (event: TrackingEvent) => void;
 
-type useMouseTrackingReturn = [RefCallback<HTMLElement>];
+type UseMouseTrackingReturn = [RefCallback<HTMLElement>];
 
 /**
  * Updates CSS variables based on mouse position.
@@ -77,7 +77,7 @@ let isListening = false;
 /**
  * React hook to track mouse movement and update CSS variables.
  */
-export function useMouseTracking(): useMouseTrackingReturn {
+export function useMouseTracking(): UseMouseTrackingReturn {
   const [element, setElement] = useState<HTMLElement | null>(null);
 
   // Callback ref to set the target element
